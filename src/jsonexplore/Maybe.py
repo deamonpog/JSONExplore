@@ -64,6 +64,18 @@ class Maybe:
             elif type(self.json_object) is list:
                 return as_type([func(idx, obj) for idx,obj in enumerate(self.json_object) if filter(idx, obj)])
         return []
+    
+    def filter(self, func=lambda k,o: True):
+        """
+        Safely filter items in a JSON array (list) or object (dict) based on the provided function.
+        Returns a Maybe wrapping a list of items that satisfy the filter condition.
+        """
+        if self.json_object is not None:
+            if type(self.json_object) is dict:
+                return Maybe({k: v for k,v in self.json_object.items() if func(k,v)})
+            elif type(self.json_object) is list:
+                return Maybe([obj for idx,obj in enumerate(self.json_object) if func(idx, obj)])
+        return Maybe(None)
 
     def value(self):
         return self.json_object
