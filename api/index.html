@@ -1,0 +1,4385 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Introspect, summarize, and navigate nested JSON structures">
+      
+      
+      
+        <link rel="canonical" href="https://deamonpog.github.io/jsonexplore/api/">
+      
+      
+        <link rel="prev" href="..">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.22">
+    
+    
+      
+        <title>API Reference - jsonexplore Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.84d31ad4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#api-reference" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="jsonexplore Documentation" class="md-header__button md-logo" aria-label="jsonexplore Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            jsonexplore Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              API Reference
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/deamonpog/jsonexplore" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    deamonpog/jsonexplore
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  API Reference
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="jsonexplore Documentation" class="md-nav__button md-logo" aria-label="jsonexplore Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    jsonexplore Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/deamonpog/jsonexplore" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    deamonpog/jsonexplore
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    API Reference
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    API Reference
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#package-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Package Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jsonexplore" class="md-nav__link">
+    <span class="md-ellipsis">
+      jsonexplore
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="jsonexplore">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jsonexplore.get_json_file_paths" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_json_file_paths
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jsonexplore.read_json_file" class="md-nav__link">
+    <span class="md-ellipsis">
+      read_json_file
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core Modules
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Core Modules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#file-operations-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      File Operations Module
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jsonexplore.file_reader" class="md-nav__link">
+    <span class="md-ellipsis">
+      file_reader
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="file_reader">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jsonexplore.file_reader.get_json_file_paths" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_json_file_paths
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jsonexplore.file_reader.read_json_file" class="md-nav__link">
+    <span class="md-ellipsis">
+      read_json_file
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structural-exploration-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      Structural Exploration Module
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jsonexplore.Explore" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explore
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Explore">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jsonexplore.Explore.Explore" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explore
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Explore">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jsonexplore.Explore.Explore.explore_child" class="md-nav__link">
+    <span class="md-ellipsis">
+      explore_child
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jsonexplore.Explore.Explore.get_child_keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_child_keys
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jsonexplore.Explore.Explore.invest_grandchildren" class="md-nav__link">
+    <span class="md-ellipsis">
+      invest_grandchildren
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#safe-access-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      Safe Access Module
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jsonexplore.Maybe" class="md-nav__link">
+    <span class="md-ellipsis">
+      Maybe
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Maybe">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jsonexplore.Maybe.Maybe" class="md-nav__link">
+    <span class="md-ellipsis">
+      Maybe
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Maybe">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jsonexplore.Maybe.Maybe.array" class="md-nav__link">
+    <span class="md-ellipsis">
+      array
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jsonexplore.Maybe.Maybe.field" class="md-nav__link">
+    <span class="md-ellipsis">
+      field
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jsonexplore.Maybe.Maybe.filter" class="md-nav__link">
+    <span class="md-ellipsis">
+      filter
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jsonexplore.Maybe.Maybe.index" class="md-nav__link">
+    <span class="md-ellipsis">
+      index
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jsonexplore.Maybe.Maybe.value" class="md-nav__link">
+    <span class="md-ellipsis">
+      value
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xml-processing-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      XML Processing Module
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jsonexplore.SimpleXML" class="md-nav__link">
+    <span class="md-ellipsis">
+      SimpleXML
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SimpleXML">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jsonexplore.SimpleXML.SimpleXML" class="md-nav__link">
+    <span class="md-ellipsis">
+      SimpleXML
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SimpleXML">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jsonexplore.SimpleXML.SimpleXML.analyze_tag_usagee" class="md-nav__link">
+    <span class="md-ellipsis">
+      analyze_tag_usagee
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jsonexplore.SimpleXML.SimpleXML.to_dict" class="md-nav__link">
+    <span class="md-ellipsis">
+      to_dict
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unified-interface-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      Unified Interface Module
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jsonexplore.Xplore" class="md-nav__link">
+    <span class="md-ellipsis">
+      Xplore
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Xplore">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jsonexplore.Xplore.Xplore" class="md-nav__link">
+    <span class="md-ellipsis">
+      Xplore
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Xplore">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jsonexplore.Xplore.Xplore.keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      keys
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#package-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Package Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jsonexplore" class="md-nav__link">
+    <span class="md-ellipsis">
+      jsonexplore
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="jsonexplore">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jsonexplore.get_json_file_paths" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_json_file_paths
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jsonexplore.read_json_file" class="md-nav__link">
+    <span class="md-ellipsis">
+      read_json_file
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core Modules
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Core Modules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#file-operations-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      File Operations Module
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jsonexplore.file_reader" class="md-nav__link">
+    <span class="md-ellipsis">
+      file_reader
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="file_reader">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jsonexplore.file_reader.get_json_file_paths" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_json_file_paths
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jsonexplore.file_reader.read_json_file" class="md-nav__link">
+    <span class="md-ellipsis">
+      read_json_file
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structural-exploration-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      Structural Exploration Module
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jsonexplore.Explore" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explore
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Explore">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jsonexplore.Explore.Explore" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explore
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Explore">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jsonexplore.Explore.Explore.explore_child" class="md-nav__link">
+    <span class="md-ellipsis">
+      explore_child
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jsonexplore.Explore.Explore.get_child_keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_child_keys
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jsonexplore.Explore.Explore.invest_grandchildren" class="md-nav__link">
+    <span class="md-ellipsis">
+      invest_grandchildren
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#safe-access-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      Safe Access Module
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jsonexplore.Maybe" class="md-nav__link">
+    <span class="md-ellipsis">
+      Maybe
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Maybe">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jsonexplore.Maybe.Maybe" class="md-nav__link">
+    <span class="md-ellipsis">
+      Maybe
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Maybe">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jsonexplore.Maybe.Maybe.array" class="md-nav__link">
+    <span class="md-ellipsis">
+      array
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jsonexplore.Maybe.Maybe.field" class="md-nav__link">
+    <span class="md-ellipsis">
+      field
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jsonexplore.Maybe.Maybe.filter" class="md-nav__link">
+    <span class="md-ellipsis">
+      filter
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jsonexplore.Maybe.Maybe.index" class="md-nav__link">
+    <span class="md-ellipsis">
+      index
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jsonexplore.Maybe.Maybe.value" class="md-nav__link">
+    <span class="md-ellipsis">
+      value
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xml-processing-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      XML Processing Module
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jsonexplore.SimpleXML" class="md-nav__link">
+    <span class="md-ellipsis">
+      SimpleXML
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SimpleXML">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jsonexplore.SimpleXML.SimpleXML" class="md-nav__link">
+    <span class="md-ellipsis">
+      SimpleXML
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SimpleXML">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jsonexplore.SimpleXML.SimpleXML.analyze_tag_usagee" class="md-nav__link">
+    <span class="md-ellipsis">
+      analyze_tag_usagee
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jsonexplore.SimpleXML.SimpleXML.to_dict" class="md-nav__link">
+    <span class="md-ellipsis">
+      to_dict
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unified-interface-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      Unified Interface Module
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jsonexplore.Xplore" class="md-nav__link">
+    <span class="md-ellipsis">
+      Xplore
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Xplore">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jsonexplore.Xplore.Xplore" class="md-nav__link">
+    <span class="md-ellipsis">
+      Xplore
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Xplore">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jsonexplore.Xplore.Xplore.keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      keys
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="api-reference">API Reference<a class="headerlink" href="#api-reference" title="Permanent link">&para;</a></h1>
+<p>This comprehensive API reference is automatically generated from the source code docstrings using <strong>mkdocstrings</strong>. All classes, methods, and functions are documented with complete parameter descriptions, return values, and usage examples following NumPy documentation standards.</p>
+<hr />
+<h2 id="package-overview">Package Overview<a class="headerlink" href="#package-overview" title="Permanent link">&para;</a></h2>
+<p>The <code>jsonexplore</code> package provides a comprehensive suite of tools for JSON data structure exploration, safe navigation, and analysis. All primary components are available through the main package namespace for convenient access.</p>
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<h2 id="jsonexplore" class="doc doc-heading">
+            <span class="doc doc-object-name doc-module-name">jsonexplore</span>
+
+
+<a href="#jsonexplore" class="headerlink" title="Permanent link">&para;</a></h2>
+
+    <div class="doc doc-contents first">
+
+        <p>JSONExplore - A Python package for exploring and navigating JSON structures.</p>
+<p>This package provides tools for introspecting, summarizing, and safely accessing
+nested JSON data structures. It includes utilities for file handling, safe data
+access patterns, and unified exploration interfaces.</p>
+
+
+<p><span class="doc-section-title">Classes:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code><span title="jsonexplore.Explore : class">Explore : class</span></code></td>
+            <td>
+              <div class="doc-md-description">
+                <p>Lightweight structural explorer for JSON objects.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="jsonexplore.Maybe : class">Maybe : class</span></code></td>
+            <td>
+              <div class="doc-md-description">
+                <p>Monadic-style wrapper for safe optional traversal.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="jsonexplore.Xplore : class">Xplore : class</span></code></td>
+            <td>
+              <div class="doc-md-description">
+                <p>Unified convenience facade combining all exploration tools.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="jsonexplore.SimpleXML : class">SimpleXML : class</span></code></td>
+            <td>
+              <div class="doc-md-description">
+                <p>Utility for converting XML to nested dictionary structures.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<p><span class="doc-section-title">Functions:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+            <tr class="doc-section-item">
+              <td><code><span title="jsonexplore.get_json_file_paths : function">get_json_file_paths : function</span></code></td>
+              <td>
+                <div class="doc-md-description">
+                  <p>Find JSON files in a directory using glob patterns.</p>
+                </div>
+              </td>
+            </tr>
+            <tr class="doc-section-item">
+              <td><code><span title="jsonexplore.read_json_file : function">read_json_file : function</span></code></td>
+              <td>
+                <div class="doc-md-description">
+                  <p>Read and parse JSON files with error handling.</p>
+                </div>
+              </td>
+            </tr>
+      </tbody>
+    </table>
+
+
+<p><span class="doc-section-title">Examples:</span></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">jsonexplore</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">je</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;users&#39;</span><span class="p">:</span> <span class="p">[{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Alice&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">30</span><span class="p">}]}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">explorer</span> <span class="o">=</span> <span class="n">je</span><span class="o">.</span><span class="n">Xplore</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">name</span> <span class="o">=</span> <span class="n">explorer</span><span class="p">[</span><span class="s1">&#39;users&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>  <span class="c1"># &#39;Alice&#39;</span>
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="jsonexplore.get_json_file_paths" class="doc doc-heading">
+            <span class="doc doc-object-name doc-function-name">get_json_file_paths</span>
+
+
+<a href="#jsonexplore.get_json_file_paths" class="headerlink" title="Permanent link">&para;</a></h3>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">get_json_file_paths</span><span class="p">(</span><span class="n">base_path</span><span class="p">,</span> <span class="n">pattern</span><span class="o">=</span><span class="s1">&#39;*.json&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Find JSON files in a directory using glob patterns.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>base_path</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The base directory path to search for JSON files.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>pattern</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The glob pattern to match files, by default "*.json".</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;*.json&#39;</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code>list of str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>A list of absolute file paths to JSON files found in the directory.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<p><span class="doc-section-title">Examples:</span></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">json_files</span> <span class="o">=</span> <span class="n">get_json_file_paths</span><span class="p">(</span><span class="s1">&#39;/path/to/data&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">json_files</span><span class="p">)</span>
+<span class="go">[&#39;/path/to/data/file1.json&#39;, &#39;/path/to/data/file2.json&#39;]</span>
+</code></pre></div>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">custom_files</span> <span class="o">=</span> <span class="n">get_json_file_paths</span><span class="p">(</span><span class="s1">&#39;/path/to/data&#39;</span><span class="p">,</span> <span class="s1">&#39;config*.json&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">custom_files</span><span class="p">)</span>
+<span class="go">[&#39;/path/to/data/config_dev.json&#39;, &#39;/path/to/data/config_prod.json&#39;]</span>
+</code></pre></div>
+
+
+            <details class="quote">
+              <summary>Source code in <code>src\jsonexplore\file_reader.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">get_json_file_paths</span><span class="p">(</span><span class="n">base_path</span><span class="p">,</span> <span class="n">pattern</span><span class="o">=</span><span class="s2">&quot;*.json&quot;</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Find JSON files in a directory using glob patterns.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    base_path : str</span>
+<span class="sd">        The base directory path to search for JSON files.</span>
+<span class="sd">    pattern : str, optional</span>
+<span class="sd">        The glob pattern to match files, by default &quot;*.json&quot;.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    list of str</span>
+<span class="sd">        A list of absolute file paths to JSON files found in the directory.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; json_files = get_json_file_paths(&#39;/path/to/data&#39;)</span>
+<span class="sd">    &gt;&gt;&gt; print(json_files)</span>
+<span class="sd">    [&#39;/path/to/data/file1.json&#39;, &#39;/path/to/data/file2.json&#39;]</span>
+
+<span class="sd">    &gt;&gt;&gt; custom_files = get_json_file_paths(&#39;/path/to/data&#39;, &#39;config*.json&#39;)</span>
+<span class="sd">    &gt;&gt;&gt; print(custom_files)</span>
+<span class="sd">    [&#39;/path/to/data/config_dev.json&#39;, &#39;/path/to/data/config_prod.json&#39;]</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">json_files</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">base_path</span><span class="p">,</span> <span class="n">pattern</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">json_files</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="jsonexplore.read_json_file" class="doc doc-heading">
+            <span class="doc doc-object-name doc-function-name">read_json_file</span>
+
+
+<a href="#jsonexplore.read_json_file" class="headerlink" title="Permanent link">&para;</a></h3>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">read_json_file</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Read and parse a JSON file with error handling.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>file_path</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The absolute path to the JSON file to read.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>encoding</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The file encoding to use when reading, by default "utf-8".</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;utf-8&#39;</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="dict">dict</span> or <span title="list">list</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The parsed JSON data structure.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<p><span class="doc-section-title">Raises:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="FileNotFoundError">FileNotFoundError</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>If the specified file does not exist.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="json.JSONDecodeError">JSONDecodeError</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>If the file contents are not valid JSON.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<p><span class="doc-section-title">Examples:</span></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="n">read_json_file</span><span class="p">(</span><span class="s1">&#39;/path/to/data.json&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+<span class="go">&lt;class &#39;dict&#39;&gt;</span>
+</code></pre></div>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="n">read_json_file</span><span class="p">(</span><span class="s1">&#39;/path/to/array.json&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+<span class="go">&lt;class &#39;list&#39;&gt;</span>
+</code></pre></div>
+
+
+            <details class="quote">
+              <summary>Source code in <code>src\jsonexplore\file_reader.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span>
+<span class="normal">75</span>
+<span class="normal">76</span>
+<span class="normal">77</span>
+<span class="normal">78</span>
+<span class="normal">79</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">read_json_file</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Read and parse a JSON file with error handling.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    file_path : str</span>
+<span class="sd">        The absolute path to the JSON file to read.</span>
+<span class="sd">    encoding : str, optional</span>
+<span class="sd">        The file encoding to use when reading, by default &quot;utf-8&quot;.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    dict or list</span>
+<span class="sd">        The parsed JSON data structure.</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    FileNotFoundError</span>
+<span class="sd">        If the specified file does not exist.</span>
+<span class="sd">    json.JSONDecodeError</span>
+<span class="sd">        If the file contents are not valid JSON.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; data = read_json_file(&#39;/path/to/data.json&#39;)</span>
+<span class="sd">    &gt;&gt;&gt; print(type(data))</span>
+<span class="sd">    &lt;class &#39;dict&#39;&gt;</span>
+
+<span class="sd">    &gt;&gt;&gt; data = read_json_file(&#39;/path/to/array.json&#39;)</span>
+<span class="sd">    &gt;&gt;&gt; print(type(data))</span>
+<span class="sd">    &lt;class &#39;list&#39;&gt;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">file_path</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;File not found at </span><span class="si">{</span><span class="n">file_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">data</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div><hr />
+<h2 id="core-modules">Core Modules<a class="headerlink" href="#core-modules" title="Permanent link">&para;</a></h2>
+<h3 id="file-operations-module">File Operations Module<a class="headerlink" href="#file-operations-module" title="Permanent link">&para;</a></h3>
+<p>The <code>file_reader</code> module provides essential utilities for locating and loading JSON data files from the filesystem with robust error handling and encoding support.</p>
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<h2 id="jsonexplore.file_reader" class="doc doc-heading">
+            <span class="doc doc-object-name doc-module-name">file_reader</span>
+
+
+<a href="#jsonexplore.file_reader" class="headerlink" title="Permanent link">&para;</a></h2>
+
+    <div class="doc doc-contents first">
+
+        <p>File reader utilities for JSON file operations.</p>
+<p>This module provides utility functions for finding and reading JSON files
+from the filesystem with proper error handling.</p>
+
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="jsonexplore.file_reader.get_json_file_paths" class="doc doc-heading">
+            <span class="doc doc-object-name doc-function-name">get_json_file_paths</span>
+
+
+<a href="#jsonexplore.file_reader.get_json_file_paths" class="headerlink" title="Permanent link">&para;</a></h3>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">get_json_file_paths</span><span class="p">(</span><span class="n">base_path</span><span class="p">,</span> <span class="n">pattern</span><span class="o">=</span><span class="s1">&#39;*.json&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Find JSON files in a directory using glob patterns.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>base_path</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The base directory path to search for JSON files.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>pattern</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The glob pattern to match files, by default "*.json".</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;*.json&#39;</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code>list of str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>A list of absolute file paths to JSON files found in the directory.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<p><span class="doc-section-title">Examples:</span></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">json_files</span> <span class="o">=</span> <span class="n">get_json_file_paths</span><span class="p">(</span><span class="s1">&#39;/path/to/data&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">json_files</span><span class="p">)</span>
+<span class="go">[&#39;/path/to/data/file1.json&#39;, &#39;/path/to/data/file2.json&#39;]</span>
+</code></pre></div>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">custom_files</span> <span class="o">=</span> <span class="n">get_json_file_paths</span><span class="p">(</span><span class="s1">&#39;/path/to/data&#39;</span><span class="p">,</span> <span class="s1">&#39;config*.json&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">custom_files</span><span class="p">)</span>
+<span class="go">[&#39;/path/to/data/config_dev.json&#39;, &#39;/path/to/data/config_prod.json&#39;]</span>
+</code></pre></div>
+
+
+            <details class="quote">
+              <summary>Source code in <code>src\jsonexplore\file_reader.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">get_json_file_paths</span><span class="p">(</span><span class="n">base_path</span><span class="p">,</span> <span class="n">pattern</span><span class="o">=</span><span class="s2">&quot;*.json&quot;</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Find JSON files in a directory using glob patterns.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    base_path : str</span>
+<span class="sd">        The base directory path to search for JSON files.</span>
+<span class="sd">    pattern : str, optional</span>
+<span class="sd">        The glob pattern to match files, by default &quot;*.json&quot;.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    list of str</span>
+<span class="sd">        A list of absolute file paths to JSON files found in the directory.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; json_files = get_json_file_paths(&#39;/path/to/data&#39;)</span>
+<span class="sd">    &gt;&gt;&gt; print(json_files)</span>
+<span class="sd">    [&#39;/path/to/data/file1.json&#39;, &#39;/path/to/data/file2.json&#39;]</span>
+
+<span class="sd">    &gt;&gt;&gt; custom_files = get_json_file_paths(&#39;/path/to/data&#39;, &#39;config*.json&#39;)</span>
+<span class="sd">    &gt;&gt;&gt; print(custom_files)</span>
+<span class="sd">    [&#39;/path/to/data/config_dev.json&#39;, &#39;/path/to/data/config_prod.json&#39;]</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">json_files</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">base_path</span><span class="p">,</span> <span class="n">pattern</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">json_files</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="jsonexplore.file_reader.read_json_file" class="doc doc-heading">
+            <span class="doc doc-object-name doc-function-name">read_json_file</span>
+
+
+<a href="#jsonexplore.file_reader.read_json_file" class="headerlink" title="Permanent link">&para;</a></h3>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">read_json_file</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Read and parse a JSON file with error handling.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>file_path</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The absolute path to the JSON file to read.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>encoding</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The file encoding to use when reading, by default "utf-8".</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;utf-8&#39;</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="dict">dict</span> or <span title="list">list</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The parsed JSON data structure.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<p><span class="doc-section-title">Raises:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="FileNotFoundError">FileNotFoundError</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>If the specified file does not exist.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="json.JSONDecodeError">JSONDecodeError</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>If the file contents are not valid JSON.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<p><span class="doc-section-title">Examples:</span></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="n">read_json_file</span><span class="p">(</span><span class="s1">&#39;/path/to/data.json&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+<span class="go">&lt;class &#39;dict&#39;&gt;</span>
+</code></pre></div>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="n">read_json_file</span><span class="p">(</span><span class="s1">&#39;/path/to/array.json&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+<span class="go">&lt;class &#39;list&#39;&gt;</span>
+</code></pre></div>
+
+
+            <details class="quote">
+              <summary>Source code in <code>src\jsonexplore\file_reader.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span>
+<span class="normal">75</span>
+<span class="normal">76</span>
+<span class="normal">77</span>
+<span class="normal">78</span>
+<span class="normal">79</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">read_json_file</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Read and parse a JSON file with error handling.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    file_path : str</span>
+<span class="sd">        The absolute path to the JSON file to read.</span>
+<span class="sd">    encoding : str, optional</span>
+<span class="sd">        The file encoding to use when reading, by default &quot;utf-8&quot;.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    dict or list</span>
+<span class="sd">        The parsed JSON data structure.</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    FileNotFoundError</span>
+<span class="sd">        If the specified file does not exist.</span>
+<span class="sd">    json.JSONDecodeError</span>
+<span class="sd">        If the file contents are not valid JSON.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; data = read_json_file(&#39;/path/to/data.json&#39;)</span>
+<span class="sd">    &gt;&gt;&gt; print(type(data))</span>
+<span class="sd">    &lt;class &#39;dict&#39;&gt;</span>
+
+<span class="sd">    &gt;&gt;&gt; data = read_json_file(&#39;/path/to/array.json&#39;)</span>
+<span class="sd">    &gt;&gt;&gt; print(type(data))</span>
+<span class="sd">    &lt;class &#39;list&#39;&gt;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">file_path</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;File not found at </span><span class="si">{</span><span class="n">file_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">data</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div><h3 id="structural-exploration-module">Structural Exploration Module<a class="headerlink" href="#structural-exploration-module" title="Permanent link">&para;</a></h3>
+<p>The <code>Explore</code> class offers lightweight structural analysis capabilities for JSON objects, enabling inspection of nested hierarchies and statistical analysis of data schemas.</p>
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<h2 id="jsonexplore.Explore" class="doc doc-heading">
+            <span class="doc doc-object-name doc-module-name">Explore</span>
+
+
+<a href="#jsonexplore.Explore" class="headerlink" title="Permanent link">&para;</a></h2>
+
+    <div class="doc doc-contents first">
+
+        <p>Lightweight structural explorer for JSON objects.</p>
+<p>This module provides the Explore class for basic inspection and navigation
+of nested JSON data structures (dictionaries and lists).</p>
+
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="jsonexplore.Explore.Explore" class="doc doc-heading">
+            <span class="doc doc-object-name doc-class-name">Explore</span>
+
+
+<a href="#jsonexplore.Explore.Explore" class="headerlink" title="Permanent link">&para;</a></h3>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">Explore</span><span class="p">(</span><span class="n">json_object</span><span class="p">)</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+
+        <p>A lightweight explorer for inspecting JSON object structures.</p>
+<p>This class provides methods to examine the structure of JSON data,
+navigate through nested objects, and analyze the distribution of
+child properties across collections.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>json_object</code>
+            </td>
+            <td>
+                  <code>dict, list, or any</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The JSON object to explore. Can be a dictionary, list, or any other type.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<p><span class="doc-section-title">Attributes:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code><span title="jsonexplore.Explore.Explore.json_object">json_object</span></code></td>
+            <td>
+                  <code>dict, list, or any</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The original JSON object being explored.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="jsonexplore.Explore.Explore.child_keys">child_keys</span></code></td>
+            <td>
+                  <code><span title="list">list</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>A list of keys (for dicts) or indices (for lists) of direct children.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<p><span class="doc-section-title">Examples:</span></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;users&#39;</span><span class="p">:</span> <span class="p">[{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Alice&#39;</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Bob&#39;</span><span class="p">}]}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">explorer</span> <span class="o">=</span> <span class="n">Explore</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">explorer</span><span class="o">.</span><span class="n">get_child_keys</span><span class="p">())</span>
+<span class="go">[&#39;users&#39;]</span>
+</code></pre></div>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">users_explorer</span> <span class="o">=</span> <span class="n">explorer</span><span class="o">.</span><span class="n">explore_child</span><span class="p">(</span><span class="s1">&#39;users&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">users_explorer</span><span class="o">.</span><span class="n">get_child_keys</span><span class="p">())</span>
+<span class="go">[0, 1]</span>
+</code></pre></div>
+
+
+
+
+
+
+
+
+                  <details class="quote">
+                    <summary>Source code in <code>src\jsonexplore\Explore.py</code></summary>
+                    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">json_object</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">json_object</span> <span class="o">=</span> <span class="n">json_object</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">child_keys</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">json_object</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">dict</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">child_keys</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">json_object</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+    <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">json_object</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">list</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">child_keys</span> <span class="o">=</span> <span class="p">[</span><span class="n">idx</span> <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">json_object</span><span class="p">))]</span>
+</code></pre></div></td></tr></table></div>
+                  </details>
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="jsonexplore.Explore.Explore.explore_child" class="doc doc-heading">
+            <span class="doc doc-object-name doc-function-name">explore_child</span>
+
+
+<a href="#jsonexplore.Explore.Explore.explore_child" class="headerlink" title="Permanent link">&para;</a></h4>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">explore_child</span><span class="p">(</span><span class="n">child_key</span><span class="p">)</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Create a new Explore instance for a specific child.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>child_key</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span> or <span title="int">int</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The key (for dict) or index (for list) of the child to explore.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="Explore (jsonexplore.Explore.Explore)" href="#jsonexplore.Explore.Explore">Explore</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>A new Explore instance wrapping the child object, or None if not found.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<p><span class="doc-section-title">Examples:</span></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;users&#39;</span><span class="p">:</span> <span class="p">[{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Alice&#39;</span><span class="p">}]}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">explorer</span> <span class="o">=</span> <span class="n">Explore</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">child</span> <span class="o">=</span> <span class="n">explorer</span><span class="o">.</span><span class="n">explore_child</span><span class="p">(</span><span class="s1">&#39;users&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">child</span><span class="o">.</span><span class="n">json_object</span><span class="p">))</span>
+<span class="go">&lt;class &#39;list&#39;&gt;</span>
+</code></pre></div>
+
+
+            <details class="quote">
+              <summary>Source code in <code>src\jsonexplore\Explore.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">explore_child</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">child_key</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Create a new Explore instance for a specific child.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    child_key : str or int</span>
+<span class="sd">        The key (for dict) or index (for list) of the child to explore.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    Explore</span>
+<span class="sd">        A new Explore instance wrapping the child object, or None if not found.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; data = {&#39;users&#39;: [{&#39;name&#39;: &#39;Alice&#39;}]}</span>
+<span class="sd">    &gt;&gt;&gt; explorer = Explore(data)</span>
+<span class="sd">    &gt;&gt;&gt; child = explorer.explore_child(&#39;users&#39;)</span>
+<span class="sd">    &gt;&gt;&gt; print(type(child.json_object))</span>
+<span class="sd">    &lt;class &#39;list&#39;&gt;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">child_key</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">json_object</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">Explore</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">json_object</span><span class="p">[</span><span class="n">child_key</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">Explore</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="jsonexplore.Explore.Explore.get_child_keys" class="doc doc-heading">
+            <span class="doc doc-object-name doc-function-name">get_child_keys</span>
+
+
+<a href="#jsonexplore.Explore.Explore.get_child_keys" class="headerlink" title="Permanent link">&para;</a></h4>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">get_child_keys</span><span class="p">()</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Get the keys or indices of direct children.</p>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="list">list</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>For dictionaries: list of string keys.
+For lists: list of integer indices.
+For other types: empty list.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<p><span class="doc-section-title">Examples:</span></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">explorer</span> <span class="o">=</span> <span class="n">Explore</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">explorer</span><span class="o">.</span><span class="n">get_child_keys</span><span class="p">())</span>
+<span class="go">[&#39;a&#39;, &#39;b&#39;]</span>
+</code></pre></div>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">explorer</span> <span class="o">=</span> <span class="n">Explore</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">explorer</span><span class="o">.</span><span class="n">get_child_keys</span><span class="p">())</span>
+<span class="go">[0, 1, 2]</span>
+</code></pre></div>
+
+
+            <details class="quote">
+              <summary>Source code in <code>src\jsonexplore\Explore.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span>
+<span class="normal">75</span>
+<span class="normal">76</span>
+<span class="normal">77</span>
+<span class="normal">78</span>
+<span class="normal">79</span>
+<span class="normal">80</span>
+<span class="normal">81</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">get_child_keys</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Get the keys or indices of direct children.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    list</span>
+<span class="sd">        For dictionaries: list of string keys.</span>
+<span class="sd">        For lists: list of integer indices.</span>
+<span class="sd">        For other types: empty list.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; data = {&#39;a&#39;: 1, &#39;b&#39;: 2}</span>
+<span class="sd">    &gt;&gt;&gt; explorer = Explore(data)</span>
+<span class="sd">    &gt;&gt;&gt; print(explorer.get_child_keys())</span>
+<span class="sd">    [&#39;a&#39;, &#39;b&#39;]</span>
+
+<span class="sd">    &gt;&gt;&gt; data = [10, 20, 30]</span>
+<span class="sd">    &gt;&gt;&gt; explorer = Explore(data)</span>
+<span class="sd">    &gt;&gt;&gt; print(explorer.get_child_keys())</span>
+<span class="sd">    [0, 1, 2]</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">child_keys</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="jsonexplore.Explore.Explore.invest_grandchildren" class="doc doc-heading">
+            <span class="doc doc-object-name doc-function-name">invest_grandchildren</span>
+
+
+<a href="#jsonexplore.Explore.Explore.invest_grandchildren" class="headerlink" title="Permanent link">&para;</a></h4>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">invest_grandchildren</span><span class="p">(</span><span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Analyze the distribution of grandchild keys across all children.</p>
+<p>This method examines each child of the current object and counts
+how frequently each grandchild key appears across all children.
+Useful for understanding the schema of collections.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>verbose</code>
+            </td>
+            <td>
+                  <code><span title="bool">bool</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>If True, print detailed exploration progress, by default False.</p>
+              </div>
+            </td>
+            <td>
+                  <code>False</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="dict">dict</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>A dictionary mapping grandchild keys to their occurrence counts.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<p><span class="doc-section-title">Examples:</span></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+<span class="gp">... </span>    <span class="s1">&#39;users&#39;</span><span class="p">:</span> <span class="p">[</span>
+<span class="gp">... </span>        <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Alice&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">30</span><span class="p">},</span>
+<span class="gp">... </span>        <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Bob&#39;</span><span class="p">,</span> <span class="s1">&#39;email&#39;</span><span class="p">:</span> <span class="s1">&#39;bob@example.com&#39;</span><span class="p">},</span>
+<span class="gp">... </span>        <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Charlie&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">25</span><span class="p">}</span>
+<span class="gp">... </span>    <span class="p">]</span>
+<span class="gp">... </span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">explorer</span> <span class="o">=</span> <span class="n">Explore</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;users&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">counts</span> <span class="o">=</span> <span class="n">explorer</span><span class="o">.</span><span class="n">invest_grandchildren</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">counts</span><span class="p">)</span>
+<span class="go">{&#39;name&#39;: 3, &#39;age&#39;: 2, &#39;email&#39;: 1}</span>
+</code></pre></div>
+
+
+<details class="note" open>
+  <summary>Notes</summary>
+  <p>This method is particularly useful for analyzing collections where
+objects may have varying schemas or optional properties.</p>
+</details>
+
+            <details class="quote">
+              <summary>Source code in <code>src\jsonexplore\Explore.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span>
+<span class="normal">151</span>
+<span class="normal">152</span>
+<span class="normal">153</span>
+<span class="normal">154</span>
+<span class="normal">155</span>
+<span class="normal">156</span>
+<span class="normal">157</span>
+<span class="normal">158</span>
+<span class="normal">159</span>
+<span class="normal">160</span>
+<span class="normal">161</span>
+<span class="normal">162</span>
+<span class="normal">163</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">invest_grandchildren</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Analyze the distribution of grandchild keys across all children.</span>
+
+<span class="sd">    This method examines each child of the current object and counts</span>
+<span class="sd">    how frequently each grandchild key appears across all children.</span>
+<span class="sd">    Useful for understanding the schema of collections.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    verbose : bool, optional</span>
+<span class="sd">        If True, print detailed exploration progress, by default False.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    dict</span>
+<span class="sd">        A dictionary mapping grandchild keys to their occurrence counts.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; data = {</span>
+<span class="sd">    ...     &#39;users&#39;: [</span>
+<span class="sd">    ...         {&#39;name&#39;: &#39;Alice&#39;, &#39;age&#39;: 30},</span>
+<span class="sd">    ...         {&#39;name&#39;: &#39;Bob&#39;, &#39;email&#39;: &#39;bob@example.com&#39;},</span>
+<span class="sd">    ...         {&#39;name&#39;: &#39;Charlie&#39;, &#39;age&#39;: 25}</span>
+<span class="sd">    ...     ]</span>
+<span class="sd">    ... }</span>
+<span class="sd">    &gt;&gt;&gt; explorer = Explore(data[&#39;users&#39;])</span>
+<span class="sd">    &gt;&gt;&gt; counts = explorer.invest_grandchildren()</span>
+<span class="sd">    &gt;&gt;&gt; print(counts)</span>
+<span class="sd">    {&#39;name&#39;: 3, &#39;age&#39;: 2, &#39;email&#39;: 1}</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    This method is particularly useful for analyzing collections where</span>
+<span class="sd">    objects may have varying schemas or optional properties.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Exploring grandchildren of type: </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">child_keys</span><span class="p">)</span><span class="si">}</span><span class="s2"> (size=</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">json_object</span><span class="p">)</span><span class="si">}</span><span class="s2">) with keys: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">get_child_keys</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">counts</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">child_key</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">child_keys</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Exploring child key: </span><span class="si">{</span><span class="n">child_key</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">expChild</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">explore_child</span><span class="p">(</span><span class="n">child_key</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Child type: </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">expChild</span><span class="o">.</span><span class="n">json_object</span><span class="p">)</span><span class="si">}</span><span class="s2"> with keys: </span><span class="si">{</span><span class="n">expChild</span><span class="o">.</span><span class="n">get_child_keys</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">grandChildKey</span> <span class="ow">in</span> <span class="n">expChild</span><span class="o">.</span><span class="n">get_child_keys</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    Found grandchild key: </span><span class="si">{</span><span class="n">grandChildKey</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">grandChildKey</span> <span class="ow">in</span> <span class="n">counts</span><span class="p">:</span>
+                <span class="n">counts</span><span class="p">[</span><span class="n">grandChildKey</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">counts</span><span class="p">[</span><span class="n">grandChildKey</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+
+    <span class="k">return</span> <span class="n">counts</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+  </div>
+
+    </div>
+
+</div><h3 id="safe-access-module">Safe Access Module<a class="headerlink" href="#safe-access-module" title="Permanent link">&para;</a></h3>
+<p>The <code>Maybe</code> class implements a monadic pattern for safe, exception-free navigation through potentially incomplete or malformed JSON structures, supporting chainable operations.</p>
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<h2 id="jsonexplore.Maybe" class="doc doc-heading">
+            <span class="doc doc-object-name doc-module-name">Maybe</span>
+
+
+<a href="#jsonexplore.Maybe" class="headerlink" title="Permanent link">&para;</a></h2>
+
+    <div class="doc doc-contents first">
+
+        <p>Safe access wrapper for JSON data structures.</p>
+<p>This module provides the Maybe class, which implements a monadic-style
+pattern for safely accessing nested JSON data without raising exceptions
+when keys or indices don't exist.</p>
+
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="jsonexplore.Maybe.Maybe" class="doc doc-heading">
+            <span class="doc doc-object-name doc-class-name">Maybe</span>
+
+
+<a href="#jsonexplore.Maybe.Maybe" class="headerlink" title="Permanent link">&para;</a></h3>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">Maybe</span><span class="p">(</span><span class="n">json_object</span><span class="p">)</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+
+        <p>A wrapper for safe optional traversal over JSON data structures.</p>
+<p>The Maybe class provides safe access to fields and indices without raising
+exceptions when accessing non-existent keys or out-of-bounds indices.
+This follows a monadic pattern where operations can be chained safely.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>json_object</code>
+            </td>
+            <td>
+                  <code><span title="any">any</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The JSON object to wrap. Can be a dict, list, or any other type.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<p><span class="doc-section-title">Attributes:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code><span title="jsonexplore.Maybe.Maybe.json_object">json_object</span></code></td>
+            <td>
+                  <code><span title="any">any</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The wrapped JSON object that may or may not exist.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<p><span class="doc-section-title">Examples:</span></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Alice&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">30</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">maybe</span> <span class="o">=</span> <span class="n">Maybe</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">name</span> <span class="o">=</span> <span class="n">maybe</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">value</span><span class="p">()</span>  <span class="c1"># &#39;Alice&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">missing</span> <span class="o">=</span> <span class="n">maybe</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="s1">&#39;missing&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">value</span><span class="p">()</span>  <span class="c1"># None</span>
+</code></pre></div>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">maybe</span> <span class="o">=</span> <span class="n">Maybe</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">first</span> <span class="o">=</span> <span class="n">maybe</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">value</span><span class="p">()</span>  <span class="c1"># 10</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">out_of_bounds</span> <span class="o">=</span> <span class="n">maybe</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">value</span><span class="p">()</span>  <span class="c1"># None</span>
+</code></pre></div>
+
+
+
+
+
+
+
+
+                  <details class="quote">
+                    <summary>Source code in <code>src\jsonexplore\Maybe.py</code></summary>
+                    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">40</span>
+<span class="normal">41</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">json_object</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">json_object</span> <span class="o">=</span> <span class="n">json_object</span>
+</code></pre></div></td></tr></table></div>
+                  </details>
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="jsonexplore.Maybe.Maybe.array" class="doc doc-heading">
+            <span class="doc doc-object-name doc-function-name">array</span>
+
+
+<a href="#jsonexplore.Maybe.Maybe.array" class="headerlink" title="Permanent link">&para;</a></h4>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">array</span><span class="p">(</span><span class="n">func</span><span class="o">=</span><span class="k">lambda</span> <span class="n">k</span><span class="p">,</span> <span class="n">o</span><span class="p">:</span> <span class="n">o</span><span class="p">,</span> <span class="nb">filter</span><span class="o">=</span><span class="k">lambda</span> <span class="n">k</span><span class="p">,</span> <span class="n">o</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="n">as_type</span><span class="o">=</span><span class="nb">list</span><span class="p">)</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Safely convert a JSON array or object to a list of transformed items.</p>
+<p>Applies a transformation function to each item in an array or each 
+key-value pair in an object. Items can be filtered before transformation.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>func</code>
+            </td>
+            <td>
+                  <code><span title="callable">callable</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Function to transform each item. For arrays: func(index, value).
+For objects: func(key, value). Default returns the value unchanged.</p>
+              </div>
+            </td>
+            <td>
+                  <code>lambda k, o: <span title="o">o</span></code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>filter</code>
+            </td>
+            <td>
+                  <code><span title="callable">callable</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Function to filter items before transformation. Same signature as func.
+Default accepts all items.</p>
+              </div>
+            </td>
+            <td>
+                  <code>lambda k, o: True</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>as_type</code>
+            </td>
+            <td>
+                  <code><span title="type">type</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The type constructor for the result container, by default list.</p>
+              </div>
+            </td>
+            <td>
+                  <code><span title="list">list</span></code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="list">list</span> or <span title="as_type">as_type</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>A container of transformed items, or empty container if not applicable.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<p><span class="doc-section-title">Examples:</span></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">maybe_list</span> <span class="o">=</span> <span class="n">Maybe</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">doubled</span> <span class="o">=</span> <span class="n">maybe_list</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="k">lambda</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span><span class="p">:</span> <span class="n">v</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># [2, 4, 6]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">filtered</span> <span class="o">=</span> <span class="n">maybe_list</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="k">lambda</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span><span class="p">:</span> <span class="n">v</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span><span class="p">:</span> <span class="n">v</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># [6]</span>
+</code></pre></div>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">maybe_dict</span> <span class="o">=</span> <span class="n">Maybe</span><span class="p">({</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">items</span> <span class="o">=</span> <span class="n">maybe_dict</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="k">lambda</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span><span class="p">:</span> <span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="o">*</span><span class="mi">2</span><span class="p">))</span>  <span class="c1"># [(&#39;a&#39;, 2), (&#39;b&#39;, 4), (&#39;c&#39;, 6)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">filtered</span> <span class="o">=</span> <span class="n">maybe_dict</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="k">lambda</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span><span class="p">:</span> <span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="o">*</span><span class="mi">2</span><span class="p">),</span> <span class="k">lambda</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span><span class="p">:</span> <span class="n">v</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># [(&#39;c&#39;, 6)]</span>
+</code></pre></div>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">not_array</span> <span class="o">=</span> <span class="n">Maybe</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span><span class="o">.</span><span class="n">array</span><span class="p">()</span>  <span class="c1"># []</span>
+</code></pre></div>
+
+
+            <details class="quote">
+              <summary>Source code in <code>src\jsonexplore\Maybe.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span>
+<span class="normal">151</span>
+<span class="normal">152</span>
+<span class="normal">153</span>
+<span class="normal">154</span>
+<span class="normal">155</span>
+<span class="normal">156</span>
+<span class="normal">157</span>
+<span class="normal">158</span>
+<span class="normal">159</span>
+<span class="normal">160</span>
+<span class="normal">161</span>
+<span class="normal">162</span>
+<span class="normal">163</span>
+<span class="normal">164</span>
+<span class="normal">165</span>
+<span class="normal">166</span>
+<span class="normal">167</span>
+<span class="normal">168</span>
+<span class="normal">169</span>
+<span class="normal">170</span>
+<span class="normal">171</span>
+<span class="normal">172</span>
+<span class="normal">173</span>
+<span class="normal">174</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">array</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="o">=</span><span class="k">lambda</span> <span class="n">k</span><span class="p">,</span><span class="n">o</span><span class="p">:</span> <span class="n">o</span><span class="p">,</span> <span class="nb">filter</span><span class="o">=</span><span class="k">lambda</span> <span class="n">k</span><span class="p">,</span><span class="n">o</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="n">as_type</span><span class="o">=</span><span class="nb">list</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Safely convert a JSON array or object to a list of transformed items.</span>
+
+<span class="sd">    Applies a transformation function to each item in an array or each </span>
+<span class="sd">    key-value pair in an object. Items can be filtered before transformation.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    func : callable, optional</span>
+<span class="sd">        Function to transform each item. For arrays: func(index, value).</span>
+<span class="sd">        For objects: func(key, value). Default returns the value unchanged.</span>
+<span class="sd">    filter : callable, optional</span>
+<span class="sd">        Function to filter items before transformation. Same signature as func.</span>
+<span class="sd">        Default accepts all items.</span>
+<span class="sd">    as_type : type, optional</span>
+<span class="sd">        The type constructor for the result container, by default list.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    list or as_type</span>
+<span class="sd">        A container of transformed items, or empty container if not applicable.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; maybe_list = Maybe([1, 2, 3])</span>
+<span class="sd">    &gt;&gt;&gt; doubled = maybe_list.array(lambda k,v: v*2)  # [2, 4, 6]</span>
+<span class="sd">    &gt;&gt;&gt; filtered = maybe_list.array(lambda k,v: v*2, lambda k,v: v &gt; 2)  # [6]</span>
+
+<span class="sd">    &gt;&gt;&gt; maybe_dict = Maybe({&#39;a&#39;: 1, &#39;b&#39;: 2, &#39;c&#39;: 3})</span>
+<span class="sd">    &gt;&gt;&gt; items = maybe_dict.array(lambda k,v: (k, v*2))  # [(&#39;a&#39;, 2), (&#39;b&#39;, 4), (&#39;c&#39;, 6)]</span>
+<span class="sd">    &gt;&gt;&gt; filtered = maybe_dict.array(lambda k,v: (k, v*2), lambda k,v: v &gt; 2)  # [(&#39;c&#39;, 6)]</span>
+
+<span class="sd">    &gt;&gt;&gt; not_array = Maybe(42).array()  # []</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">json_object</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">json_object</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">dict</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">as_type</span><span class="p">([</span><span class="n">func</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">obj</span><span class="p">)</span> <span class="k">for</span> <span class="n">key</span><span class="p">,</span><span class="n">obj</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">json_object</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="nb">filter</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">obj</span><span class="p">)])</span>
+        <span class="k">elif</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">json_object</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">list</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">as_type</span><span class="p">([</span><span class="n">func</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="n">obj</span><span class="p">)</span> <span class="k">for</span> <span class="n">idx</span><span class="p">,</span><span class="n">obj</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">json_object</span><span class="p">)</span> <span class="k">if</span> <span class="nb">filter</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="n">obj</span><span class="p">)])</span>
+    <span class="k">return</span> <span class="p">[]</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="jsonexplore.Maybe.Maybe.field" class="doc doc-heading">
+            <span class="doc doc-object-name doc-function-name">field</span>
+
+
+<a href="#jsonexplore.Maybe.Maybe.field" class="headerlink" title="Permanent link">&para;</a></h4>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">field</span><span class="p">(</span><span class="n">field</span><span class="p">)</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Safely access a field in a JSON object (dict).</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>field</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The field name to access in the dictionary.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="Maybe (jsonexplore.Maybe.Maybe)" href="#jsonexplore.Maybe.Maybe">Maybe</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>A new Maybe instance wrapping the field value or None if not present.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<p><span class="doc-section-title">Examples:</span></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">maybe</span> <span class="o">=</span> <span class="n">Maybe</span><span class="p">({</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Alice&#39;</span><span class="p">})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">name</span> <span class="o">=</span> <span class="n">maybe</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">value</span><span class="p">()</span>  <span class="c1"># &#39;Alice&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">age</span> <span class="o">=</span> <span class="n">maybe</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="s1">&#39;age&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">value</span><span class="p">()</span>    <span class="c1"># None</span>
+</code></pre></div>
+
+
+            <details class="quote">
+              <summary>Source code in <code>src\jsonexplore\Maybe.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">field</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">field</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Safely access a field in a JSON object (dict).</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    field : str</span>
+<span class="sd">        The field name to access in the dictionary.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    Maybe</span>
+<span class="sd">        A new Maybe instance wrapping the field value or None if not present.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; maybe = Maybe({&#39;name&#39;: &#39;Alice&#39;})</span>
+<span class="sd">    &gt;&gt;&gt; name = maybe.field(&#39;name&#39;).value()  # &#39;Alice&#39;</span>
+<span class="sd">    &gt;&gt;&gt; age = maybe.field(&#39;age&#39;).value()    # None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">json_object</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">json_object</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">dict</span> <span class="ow">and</span> <span class="n">field</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">json_object</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">Maybe</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">json_object</span><span class="p">[</span><span class="n">field</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">Maybe</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="jsonexplore.Maybe.Maybe.filter" class="doc doc-heading">
+            <span class="doc doc-object-name doc-function-name">filter</span>
+
+
+<a href="#jsonexplore.Maybe.Maybe.filter" class="headerlink" title="Permanent link">&para;</a></h4>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">filter</span><span class="p">(</span><span class="n">func</span><span class="o">=</span><span class="k">lambda</span> <span class="n">k</span><span class="p">,</span> <span class="n">o</span><span class="p">:</span> <span class="kc">True</span><span class="p">)</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Safely filter items in a JSON array or object.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>func</code>
+            </td>
+            <td>
+                  <code><span title="callable">callable</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Function to determine which items to keep. For arrays: func(index, value).
+For objects: func(key, value). Default keeps all items.</p>
+              </div>
+            </td>
+            <td>
+                  <code>lambda k, o: True</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="Maybe (jsonexplore.Maybe.Maybe)" href="#jsonexplore.Maybe.Maybe">Maybe</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>A new Maybe wrapping filtered data of the same type, or None if not applicable.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<p><span class="doc-section-title">Examples:</span></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">maybe_dict</span> <span class="o">=</span> <span class="n">Maybe</span><span class="p">({</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">filtered</span> <span class="o">=</span> <span class="n">maybe_dict</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span><span class="p">:</span> <span class="n">v</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">value</span><span class="p">()</span>  <span class="c1"># {&#39;c&#39;: 3}</span>
+</code></pre></div>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">maybe_list</span> <span class="o">=</span> <span class="n">Maybe</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">filtered</span> <span class="o">=</span> <span class="n">maybe_list</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">i</span><span class="p">,</span><span class="n">v</span><span class="p">:</span> <span class="n">v</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">value</span><span class="p">()</span>  <span class="c1"># [2, 4]</span>
+</code></pre></div>
+
+
+            <details class="quote">
+              <summary>Source code in <code>src\jsonexplore\Maybe.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">176</span>
+<span class="normal">177</span>
+<span class="normal">178</span>
+<span class="normal">179</span>
+<span class="normal">180</span>
+<span class="normal">181</span>
+<span class="normal">182</span>
+<span class="normal">183</span>
+<span class="normal">184</span>
+<span class="normal">185</span>
+<span class="normal">186</span>
+<span class="normal">187</span>
+<span class="normal">188</span>
+<span class="normal">189</span>
+<span class="normal">190</span>
+<span class="normal">191</span>
+<span class="normal">192</span>
+<span class="normal">193</span>
+<span class="normal">194</span>
+<span class="normal">195</span>
+<span class="normal">196</span>
+<span class="normal">197</span>
+<span class="normal">198</span>
+<span class="normal">199</span>
+<span class="normal">200</span>
+<span class="normal">201</span>
+<span class="normal">202</span>
+<span class="normal">203</span>
+<span class="normal">204</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">filter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="o">=</span><span class="k">lambda</span> <span class="n">k</span><span class="p">,</span><span class="n">o</span><span class="p">:</span> <span class="kc">True</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Safely filter items in a JSON array or object.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    func : callable, optional</span>
+<span class="sd">        Function to determine which items to keep. For arrays: func(index, value).</span>
+<span class="sd">        For objects: func(key, value). Default keeps all items.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    Maybe</span>
+<span class="sd">        A new Maybe wrapping filtered data of the same type, or None if not applicable.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; maybe_dict = Maybe({&#39;a&#39;: 1, &#39;b&#39;: 2, &#39;c&#39;: 3})</span>
+<span class="sd">    &gt;&gt;&gt; filtered = maybe_dict.filter(lambda k,v: v &gt; 2).value()  # {&#39;c&#39;: 3}</span>
+
+<span class="sd">    &gt;&gt;&gt; maybe_list = Maybe([1, 2, 3, 4])</span>
+<span class="sd">    &gt;&gt;&gt; filtered = maybe_list.filter(lambda i,v: v % 2 == 0).value()  # [2, 4]</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">json_object</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">json_object</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">dict</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">Maybe</span><span class="p">({</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">json_object</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">func</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="n">v</span><span class="p">)})</span>
+        <span class="k">elif</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">json_object</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">list</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">Maybe</span><span class="p">([</span><span class="n">obj</span> <span class="k">for</span> <span class="n">idx</span><span class="p">,</span><span class="n">obj</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">json_object</span><span class="p">)</span> <span class="k">if</span> <span class="n">func</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="n">obj</span><span class="p">)])</span>
+    <span class="k">return</span> <span class="n">Maybe</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="jsonexplore.Maybe.Maybe.index" class="doc doc-heading">
+            <span class="doc doc-object-name doc-function-name">index</span>
+
+
+<a href="#jsonexplore.Maybe.Maybe.index" class="headerlink" title="Permanent link">&para;</a></h4>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">index</span><span class="p">(</span><span class="n">index</span><span class="p">)</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Safely access an index in a JSON array (list).</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>index</code>
+            </td>
+            <td>
+                  <code><span title="int">int</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The zero-based index to access in the list.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="Maybe (jsonexplore.Maybe.Maybe)" href="#jsonexplore.Maybe.Maybe">Maybe</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>A new Maybe instance wrapping the item value or None if not present.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<p><span class="doc-section-title">Examples:</span></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">maybe</span> <span class="o">=</span> <span class="n">Maybe</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">first</span> <span class="o">=</span> <span class="n">maybe</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">value</span><span class="p">()</span>  <span class="c1"># 1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fourth</span> <span class="o">=</span> <span class="n">maybe</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">value</span><span class="p">()</span>  <span class="c1"># None</span>
+</code></pre></div>
+
+
+            <details class="quote">
+              <summary>Source code in <code>src\jsonexplore\Maybe.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">index</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Safely access an index in a JSON array (list).</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    index : int</span>
+<span class="sd">        The zero-based index to access in the list.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    Maybe</span>
+<span class="sd">        A new Maybe instance wrapping the item value or None if not present.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; maybe = Maybe([1, 2, 3])</span>
+<span class="sd">    &gt;&gt;&gt; first = maybe.index(0).value()  # 1</span>
+<span class="sd">    &gt;&gt;&gt; fourth = maybe.index(3).value()  # None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">json_object</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">json_object</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">list</span> <span class="ow">and</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">json_object</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">Maybe</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">json_object</span><span class="p">[</span><span class="n">index</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">Maybe</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="jsonexplore.Maybe.Maybe.value" class="doc doc-heading">
+            <span class="doc doc-object-name doc-function-name">value</span>
+
+
+<a href="#jsonexplore.Maybe.Maybe.value" class="headerlink" title="Permanent link">&para;</a></h4>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">value</span><span class="p">()</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Get the wrapped value.</p>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="any">any</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The wrapped JSON object, which may be None if no value exists.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<p><span class="doc-section-title">Examples:</span></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">maybe</span> <span class="o">=</span> <span class="n">Maybe</span><span class="p">({</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Alice&#39;</span><span class="p">})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="n">maybe</span><span class="o">.</span><span class="n">value</span><span class="p">()</span>  <span class="c1"># {&#39;name&#39;: &#39;Alice&#39;}</span>
+</code></pre></div>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">empty</span> <span class="o">=</span> <span class="n">Maybe</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="n">empty</span><span class="o">.</span><span class="n">value</span><span class="p">()</span>  <span class="c1"># None</span>
+</code></pre></div>
+
+
+            <details class="quote">
+              <summary>Source code in <code>src\jsonexplore\Maybe.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">206</span>
+<span class="normal">207</span>
+<span class="normal">208</span>
+<span class="normal">209</span>
+<span class="normal">210</span>
+<span class="normal">211</span>
+<span class="normal">212</span>
+<span class="normal">213</span>
+<span class="normal">214</span>
+<span class="normal">215</span>
+<span class="normal">216</span>
+<span class="normal">217</span>
+<span class="normal">218</span>
+<span class="normal">219</span>
+<span class="normal">220</span>
+<span class="normal">221</span>
+<span class="normal">222</span>
+<span class="normal">223</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">value</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Get the wrapped value.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    any</span>
+<span class="sd">        The wrapped JSON object, which may be None if no value exists.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; maybe = Maybe({&#39;name&#39;: &#39;Alice&#39;})</span>
+<span class="sd">    &gt;&gt;&gt; data = maybe.value()  # {&#39;name&#39;: &#39;Alice&#39;}</span>
+
+<span class="sd">    &gt;&gt;&gt; empty = Maybe(None)</span>
+<span class="sd">    &gt;&gt;&gt; data = empty.value()  # None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">json_object</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+  </div>
+
+    </div>
+
+</div><h3 id="xml-processing-module">XML Processing Module<a class="headerlink" href="#xml-processing-module" title="Permanent link">&para;</a></h3>
+<p>The <code>SimpleXML</code> class provides efficient XML-to-dictionary conversion capabilities for integrating XML data sources into JSON-based workflows.</p>
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<h2 id="jsonexplore.SimpleXML" class="doc doc-heading">
+            <span class="doc doc-object-name doc-module-name">SimpleXML</span>
+
+
+<a href="#jsonexplore.SimpleXML" class="headerlink" title="Permanent link">&para;</a></h2>
+
+    <div class="doc doc-contents first">
+
+        <p>Simple XML to dictionary converter.</p>
+<p>This module provides a utility class for parsing XML strings and converting
+them to nested dictionary structures for easier JSON-like manipulation.</p>
+
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="jsonexplore.SimpleXML.SimpleXML" class="doc doc-heading">
+            <span class="doc doc-object-name doc-class-name">SimpleXML</span>
+
+
+<a href="#jsonexplore.SimpleXML.SimpleXML" class="headerlink" title="Permanent link">&para;</a></h3>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">SimpleXML</span><span class="p">(</span><span class="n">xml_string</span><span class="p">)</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+
+        <p>A utility class for converting XML strings to nested dictionary structures.</p>
+<p>This class provides simple XML parsing capabilities, converting XML
+elements to nested dictionaries and analyzing tag usage patterns.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>xml_string</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The XML string to parse and convert.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<p><span class="doc-section-title">Attributes:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code><span title="jsonexplore.SimpleXML.SimpleXML.xml_string">xml_string</span></code></td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The original XML string.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="jsonexplore.SimpleXML.SimpleXML.root">root</span></code></td>
+            <td>
+                  <code><span title="xml.etree.ElementTree.Element">Element</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The parsed XML root element.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<p><span class="doc-section-title">Raises:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="xml.etree.ElementTree.ParseError">ParseError</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>If the XML string is malformed or cannot be parsed.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<p><span class="doc-section-title">Examples:</span></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">xml_data</span> <span class="o">=</span> <span class="s1">&#39;&lt;users&gt;&lt;user&gt;&lt;name&gt;Alice&lt;/name&gt;&lt;age&gt;30&lt;/age&gt;&lt;/user&gt;&lt;/users&gt;&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">parser</span> <span class="o">=</span> <span class="n">SimpleXML</span><span class="p">(</span><span class="n">xml_data</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="go">{&#39;user&#39;: {&#39;name&#39;: &#39;Alice&#39;, &#39;age&#39;: &#39;30&#39;}}</span>
+</code></pre></div>
+
+
+
+
+
+
+
+
+                  <details class="quote">
+                    <summary>Source code in <code>src\jsonexplore\SimpleXML.py</code></summary>
+                    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xml_string</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">xml_string</span> <span class="o">=</span> <span class="n">xml_string</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">root</span> <span class="o">=</span> <span class="n">ET</span><span class="o">.</span><span class="n">fromstring</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">xml_string</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+                  </details>
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="jsonexplore.SimpleXML.SimpleXML.analyze_tag_usagee" class="doc doc-heading">
+            <span class="doc doc-object-name doc-function-name">analyze_tag_usagee</span>
+
+
+<a href="#jsonexplore.SimpleXML.SimpleXML.analyze_tag_usagee" class="headerlink" title="Permanent link">&para;</a></h4>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">analyze_tag_usagee</span><span class="p">()</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Analyze the frequency of XML tags in the document.</p>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="dict">dict</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>A dictionary mapping tag names to their occurrence counts.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<p><span class="doc-section-title">Examples:</span></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">xml_data</span> <span class="o">=</span> <span class="s1">&#39;&lt;root&gt;&lt;item&gt;1&lt;/item&gt;&lt;item&gt;2&lt;/item&gt;&lt;name&gt;test&lt;/name&gt;&lt;/root&gt;&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">parser</span> <span class="o">=</span> <span class="n">SimpleXML</span><span class="p">(</span><span class="n">xml_data</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">counts</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">analyze_tag_usagee</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">counts</span><span class="p">)</span>
+<span class="go">{&#39;root&#39;: 1, &#39;item&#39;: 2, &#39;name&#39;: 1}</span>
+</code></pre></div>
+
+
+<details class="note" open>
+  <summary>Notes</summary>
+  <p>The method name contains a typo ('usagee' instead of 'usage') but is
+preserved for backward compatibility.</p>
+</details>
+
+            <details class="quote">
+              <summary>Source code in <code>src\jsonexplore\SimpleXML.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">analyze_tag_usagee</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Analyze the frequency of XML tags in the document.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    dict</span>
+<span class="sd">        A dictionary mapping tag names to their occurrence counts.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; xml_data = &#39;&lt;root&gt;&lt;item&gt;1&lt;/item&gt;&lt;item&gt;2&lt;/item&gt;&lt;name&gt;test&lt;/name&gt;&lt;/root&gt;&#39;</span>
+<span class="sd">    &gt;&gt;&gt; parser = SimpleXML(xml_data)</span>
+<span class="sd">    &gt;&gt;&gt; counts = parser.analyze_tag_usagee()</span>
+<span class="sd">    &gt;&gt;&gt; print(counts)</span>
+<span class="sd">    {&#39;root&#39;: 1, &#39;item&#39;: 2, &#39;name&#39;: 1}</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    The method name contains a typo (&#39;usagee&#39; instead of &#39;usage&#39;) but is</span>
+<span class="sd">    preserved for backward compatibility.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">tag_counts</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_count_tags</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">root</span><span class="p">,</span> <span class="n">tag_counts</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">tag_counts</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="jsonexplore.SimpleXML.SimpleXML.to_dict" class="doc doc-heading">
+            <span class="doc doc-object-name doc-function-name">to_dict</span>
+
+
+<a href="#jsonexplore.SimpleXML.SimpleXML.to_dict" class="headerlink" title="Permanent link">&para;</a></h4>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">to_dict</span><span class="p">()</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Convert the XML structure to a nested dictionary.</p>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="dict">dict</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>A nested dictionary representation of the XML structure.
+Text content becomes string values, and nested elements become
+nested dictionaries.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<p><span class="doc-section-title">Examples:</span></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">xml_data</span> <span class="o">=</span> <span class="s1">&#39;&lt;person&gt;&lt;name&gt;John&lt;/name&gt;&lt;age&gt;25&lt;/age&gt;&lt;/person&gt;&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">parser</span> <span class="o">=</span> <span class="n">SimpleXML</span><span class="p">(</span><span class="n">xml_data</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="go">{&#39;name&#39;: &#39;John&#39;, &#39;age&#39;: &#39;25&#39;}</span>
+</code></pre></div>
+
+
+            <details class="quote">
+              <summary>Source code in <code>src\jsonexplore\SimpleXML.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">to_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Convert the XML structure to a nested dictionary.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    dict</span>
+<span class="sd">        A nested dictionary representation of the XML structure.</span>
+<span class="sd">        Text content becomes string values, and nested elements become</span>
+<span class="sd">        nested dictionaries.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; xml_data = &#39;&lt;person&gt;&lt;name&gt;John&lt;/name&gt;&lt;age&gt;25&lt;/age&gt;&lt;/person&gt;&#39;</span>
+<span class="sd">    &gt;&gt;&gt; parser = SimpleXML(xml_data)</span>
+<span class="sd">    &gt;&gt;&gt; result = parser.to_dict()</span>
+<span class="sd">    &gt;&gt;&gt; print(result)</span>
+<span class="sd">    {&#39;name&#39;: &#39;John&#39;, &#39;age&#39;: &#39;25&#39;}</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_element_to_dict</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">root</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+  </div>
+
+    </div>
+
+</div><h3 id="unified-interface-module">Unified Interface Module<a class="headerlink" href="#unified-interface-module" title="Permanent link">&para;</a></h3>
+<p>The <code>Xplore</code> class serves as a comprehensive facade that combines the functionality of all core modules into a single, intuitive interface for streamlined JSON exploration workflows.</p>
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<h2 id="jsonexplore.Xplore" class="doc doc-heading">
+            <span class="doc doc-object-name doc-module-name">Xplore</span>
+
+
+<a href="#jsonexplore.Xplore" class="headerlink" title="Permanent link">&para;</a></h2>
+
+    <div class="doc doc-contents first">
+
+        <p>Unified convenience facade for JSON exploration.</p>
+<p>This module provides the Xplore class, which combines the functionality
+of Explore, Maybe, and SimpleXML into a single convenient interface
+for exploring and navigating JSON data structures.</p>
+
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="jsonexplore.Xplore.Xplore" class="doc doc-heading">
+            <span class="doc doc-object-name doc-class-name">Xplore</span>
+
+
+<a href="#jsonexplore.Xplore.Xplore" class="headerlink" title="Permanent link">&para;</a></h3>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">Xplore</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+
+        <p>Unified convenience facade combining exploration tools.</p>
+<p>This class provides a single entry point that wires together the
+functionality of Explore (structural exploration), Maybe (safe access),
+and SimpleXML (XML parsing) into one convenient interface.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>data</code>
+            </td>
+            <td>
+                  <code><span title="any">any</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The input data to be explored. Can be JSON data, XML string, or other data types.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<p><span class="doc-section-title">Attributes:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code><span title="jsonexplore.Xplore.Xplore.data">data</span></code></td>
+            <td>
+                  <code><span title="any">any</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The original input data.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="jsonexplore.Xplore.Xplore.explore">explore</span></code></td>
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="Explore (jsonexplore.Explore.Explore)" href="#jsonexplore.Explore.Explore">Explore</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>An Explore instance for general data exploration.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="jsonexplore.Xplore.Xplore.maybe">maybe</span></code></td>
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="Maybe (jsonexplore.Maybe.Maybe)" href="#jsonexplore.Maybe.Maybe">Maybe</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>A Maybe instance for safe data access operations.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="jsonexplore.Xplore.Xplore.xml">xml</span></code></td>
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="SimpleXML (jsonexplore.SimpleXML.SimpleXML)" href="#jsonexplore.SimpleXML.SimpleXML">SimpleXML</a> or None</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>A SimpleXML instance if data is an XML string, None otherwise.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<p><span class="doc-section-title">Examples:</span></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;users&#39;</span><span class="p">:</span> <span class="p">[{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Alice&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">30</span><span class="p">}]}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">xplore</span> <span class="o">=</span> <span class="n">Xplore</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">name</span> <span class="o">=</span> <span class="n">xplore</span><span class="p">[</span><span class="s1">&#39;users&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>  <span class="c1"># &#39;Alice&#39;</span>
+</code></pre></div>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">xml_data</span> <span class="o">=</span> <span class="s1">&#39;&lt;user&gt;&lt;name&gt;Bob&lt;/name&gt;&lt;/user&gt;&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">xplore</span> <span class="o">=</span> <span class="n">Xplore</span><span class="p">(</span><span class="n">xml_data</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">xml_dict</span> <span class="o">=</span> <span class="n">xplore</span><span class="o">.</span><span class="n">xml</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">xml_dict</span><span class="p">)</span>  <span class="c1"># {&#39;name&#39;: &#39;Bob&#39;}</span>
+</code></pre></div>
+
+
+<details class="note" open>
+  <summary>Notes</summary>
+  <ul>
+<li>Creates an Explore instance for general data exploration</li>
+<li>Creates a Maybe instance for safe data access operations  </li>
+<li>Creates a SimpleXML instance only if data is a string starting with "&lt;"</li>
+<li>The xml attribute will be None if data is not XML-formatted</li>
+</ul>
+</details>
+
+
+
+
+
+
+
+                  <details class="quote">
+                    <summary>Source code in <code>src\jsonexplore\Xplore.py</code></summary>
+                    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">explore</span> <span class="o">=</span> <span class="n">Explore</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">maybe</span> <span class="o">=</span> <span class="n">Maybe</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">xml</span> <span class="o">=</span> <span class="n">SimpleXML</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">and</span> <span class="n">data</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;&lt;&quot;</span><span class="p">)</span> <span class="k">else</span> <span class="kc">None</span>
+</code></pre></div></td></tr></table></div>
+                  </details>
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="jsonexplore.Xplore.Xplore.keys" class="doc doc-heading">
+            <span class="doc doc-object-name doc-function-name">keys</span>
+
+
+<a href="#jsonexplore.Xplore.Xplore.keys" class="headerlink" title="Permanent link">&para;</a></h4>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">keys</span><span class="p">()</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Get the keys of the current data if it's a dictionary or list.</p>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="list">list</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>For dictionaries: list of string keys.
+For lists: list of integer indices.
+For other types: empty list.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<p><span class="doc-section-title">Examples:</span></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Alice&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">30</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">xplore</span> <span class="o">=</span> <span class="n">Xplore</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">xplore</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+<span class="go">[&#39;name&#39;, &#39;age&#39;]</span>
+</code></pre></div>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">xplore</span> <span class="o">=</span> <span class="n">Xplore</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">xplore</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+<span class="go">[0, 1, 2]</span>
+</code></pre></div>
+
+
+            <details class="quote">
+              <summary>Source code in <code>src\jsonexplore\Xplore.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">keys</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Get the keys of the current data if it&#39;s a dictionary or list.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    list</span>
+<span class="sd">        For dictionaries: list of string keys.</span>
+<span class="sd">        For lists: list of integer indices.</span>
+<span class="sd">        For other types: empty list.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; data = {&#39;name&#39;: &#39;Alice&#39;, &#39;age&#39;: 30}</span>
+<span class="sd">    &gt;&gt;&gt; xplore = Xplore(data)</span>
+<span class="sd">    &gt;&gt;&gt; print(xplore.keys())</span>
+<span class="sd">    [&#39;name&#39;, &#39;age&#39;]</span>
+
+<span class="sd">    &gt;&gt;&gt; data = [10, 20, 30]</span>
+<span class="sd">    &gt;&gt;&gt; xplore = Xplore(data)</span>
+<span class="sd">    &gt;&gt;&gt; print(xplore.keys())</span>
+<span class="sd">    [0, 1, 2]</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">explore</span><span class="o">.</span><span class="n">get_child_keys</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.sections", "content.code.copy", "toc.follow", "search.suggest", "search.share"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>
