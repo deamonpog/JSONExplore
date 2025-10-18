@@ -1,14 +1,12 @@
 # API Reference
 
-This page is generated automatically from your docstrings via **mkdocstrings**.
-
-> Tip: Keep your docstrings in Google or NumPy style so signatures & types render cleanly.
+This comprehensive API reference is automatically generated from the source code docstrings using **mkdocstrings**. All classes, methods, and functions are documented with complete parameter descriptions, return values, and usage examples following NumPy documentation standards.
 
 ---
 
-## Top-Level API
+## Package Overview
 
-The `jsonexplore` package exposes its main entry points here (re-exported in `__init__.py`):
+The `jsonexplore` package provides a comprehensive suite of tools for JSON data structure exploration, safe navigation, and analysis. All primary components are available through the main package namespace for convenient access.
 
 ::: jsonexplore
     options:
@@ -21,10 +19,11 @@ The `jsonexplore` package exposes its main entry points here (re-exported in `__
 
 ---
 
-## Modules
+## Core Modules
 
-### `file_reader` — File utilities
-Low-level helpers to find and read JSON files.
+### File Operations Module
+
+The `file_reader` module provides essential utilities for locating and loading JSON data files from the filesystem with robust error handling and encoding support.
 
 ::: jsonexplore.file_reader
     options:
@@ -32,22 +31,26 @@ Low-level helpers to find and read JSON files.
         - get_json_file_paths
         - read_json_file
 
-### `Explore` — Lightweight structural explorer
-Wrapper to inspect children and “grandchildren” of dict/list JSON structures.
+### Structural Exploration Module
+
+The `Explore` class offers lightweight structural analysis capabilities for JSON objects, enabling inspection of nested hierarchies and statistical analysis of data schemas.
 
 ::: jsonexplore.Explore
 
-### `Maybe` — Safe access wrapper
-Monadic-style wrapper for optional traversal over dicts/lists.
+### Safe Access Module  
+
+The `Maybe` class implements a monadic pattern for safe, exception-free navigation through potentially incomplete or malformed JSON structures, supporting chainable operations.
 
 ::: jsonexplore.Maybe
 
-### `SimpleXML` — Tiny XML → dict helper
-Convenience class to parse a small XML string and convert to nested dicts.
+### XML Processing Module
+
+The `SimpleXML` class provides efficient XML-to-dictionary conversion capabilities for integrating XML data sources into JSON-based workflows.
 
 ::: jsonexplore.SimpleXML
 
-### `Xplore` — Unified convenience facade
-One entry object that wires `Explore`, `Maybe`, and `SimpleXML` together.
+### Unified Interface Module
+
+The `Xplore` class serves as a comprehensive facade that combines the functionality of all core modules into a single, intuitive interface for streamlined JSON exploration workflows.
 
 ::: jsonexplore.Xplore
