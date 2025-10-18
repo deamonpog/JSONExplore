@@ -75,10 +75,6 @@ for file_path in json_files:
 - **Data Pipeline Processing**: ETL operations with robust error handling
 - **Research and Analysis**: Dataset exploration and statistical analysis
 
-## 🤝 Contributing
-
-We welcome contributions! Please see our [contributing guidelines](CONTRIBUTING.md) for details on how to submit bug reports, feature requests, and code contributions.
-
 ## 📄 License
 
 JSONExplore is licensed under the [Apache License 2.0](./LICENSE).  
