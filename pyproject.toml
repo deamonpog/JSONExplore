@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "jsonexplore"
+version = "0.1.0"
+description = "Scan JSON files and infer a structural schema as a tree of dict/list nodes."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "Apache-2.0" }
+authors = [{ name = "Chathura Jayalath" }]
+keywords = ["json", "schema", "structure", "introspection"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: Apache Software License",
+  "Intended Audience :: Developers",
+  "Topic :: Software Development :: Libraries",
+  "Topic :: Utilities"
+]
+
+[project.scripts]
+jsonexplore = "jsonexplore.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+license-files = ["LICENSE", "NOTICE"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
