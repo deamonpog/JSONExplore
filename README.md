@@ -1,12 +1,12 @@
-# JSONExplore
+# JSON Scout
 
-[![Documentation](https://img.shields.io/badge/docs-live-brightgreen)](https://deamonpog.github.io/jsonexplore/)
+[![Documentation](https://img.shields.io/badge/docs-live-brightgreen)](https://deamonpog.github.io/json-scout/)
 [![Python](https://img.shields.io/badge/python-3.7+-blue.svg)](https://www.python.org/downloads/)
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](./LICENSE)
 
-**A comprehensive Python library for JSON data structure exploration, analysis, and safe navigation.**
+**Scout JSON structure and navigate data safely with intuitive exploration tools.**
 
-JSONExplore provides a robust suite of tools designed for developers and data professionals who need to introspect, analyze, and safely navigate complex JSON data structures. Whether you're working with APIs, configuration files, or large datasets, JSONExplore offers both low-level utilities and high-level abstractions to make JSON exploration intuitive and error-free.
+JSON Scout provides a robust suite of tools designed for developers and data professionals who need to introspect, analyze, and safely navigate complex JSON data structures. Whether you're working with APIs, configuration files, or large datasets, JSON Scout offers both low-level utilities and high-level abstractions to make JSON exploration intuitive and error-free.
 
 ## ✨ Key Features
 
@@ -20,13 +20,13 @@ JSONExplore provides a robust suite of tools designed for developers and data pr
 ### Installation
 
 ```bash
-pip install jsonexplore
+pip install json-scout
 ```
 
 ### Basic Usage
 
 ```python
-import jsonexplore as je
+import jsonscout as js
 
 # Sample data
 data = {
@@ -39,27 +39,27 @@ data = {
 }
 
 # Safe navigation with automatic error handling
-explorer = je.Xplore(data)
+explorer = js.Xplore(data)
 user_name = explorer['users'][0]['name'].value()  # Returns: "Alice"
 missing_field = explorer['users'][1]['email'].value()  # Returns: None (no exception)
 
 # Structural analysis
-explore = je.Explore(data['users'])
-field_frequency = explore.invest_grandchildren()
+explore = js.Explore(data['users'])
+field_frequency = explore.field_counts()
 print(field_frequency)  # {'name': 3, 'age': 3, 'email': 2}
 
 # File operations
-json_files = je.get_json_file_paths('/path/to/data', '*.json')
+json_files = js.get_json_file_paths('/path/to/data', '*.json')
 for file_path in json_files:
-    data = je.read_json_file(file_path)
-    explorer = je.Xplore(data)
+    data = js.read_json_file(file_path)
+    explorer = js.Xplore(data)
     # Process safely...
 ```
 
 ## 📚 Documentation
 
-- **[Complete Documentation](https://deamonpog.github.io/jsonexplore/)**: Comprehensive guides and examples
-- **[API Reference](https://deamonpog.github.io/jsonexplore/api/)**: Detailed API documentation with examples
+- **[Complete Documentation](https://deamonpog.github.io/json-scout/)**: Comprehensive guides and examples
+- **[API Reference](https://deamonpog.github.io/json-scout/api/)**: Detailed API documentation with examples
 
 ## 🏗️ Core Components
 
@@ -81,5 +81,5 @@ We welcome contributions! Please see our [contributing guidelines](CONTRIBUTING.
 
 ## 📄 License
 
-JSONExplore is licensed under the [Apache License 2.0](./LICENSE).  
+JSON Scout is licensed under the [Apache License 2.0](./LICENSE).  
 © 2025 Chathura Jayalath. See the [NOTICE](./NOTICE) file for more details.
