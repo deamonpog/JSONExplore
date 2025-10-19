@@ -206,5 +206,5 @@ We welcome contributions! Please see our contributing guidelines for details on 
 
 ## License
 
-JSON Scout is released under the Apache License 2.0. See the [LICENSE](LICENSE) file for details.
-Copyright © 2025 Chathura Jayalath. See the [NOTICE](NOTICE) file for more details.
+JSON Scout is released under the Apache License 2.0. See the [LICENSE](LICENSE.txt) file for details.
+Copyright © 2025 Chathura Jayalath. See the [NOTICE](NOTICE.txt) file for more details.
