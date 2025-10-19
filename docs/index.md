@@ -1,8 +1,8 @@
-# JSONExplore
+# JSON Scout
 
-**A comprehensive Python library for JSON data structure exploration, analysis, and safe navigation.**
+**Scout JSON structure and navigate data safely with intuitive exploration tools.**
 
-JSONExplore provides a robust suite of tools designed for developers and data professionals who need to introspect, analyze, and safely navigate complex JSON data structures. Whether you're working with APIs, configuration files, or large datasets, JSONExplore offers both low-level utilities and high-level abstractions to make JSON exploration intuitive and error-free.
+JSON Scout provides a robust suite of tools designed for developers and data professionals who need to introspect, analyze, and safely navigate complex JSON data structures. Whether you're working with APIs, configuration files, or large datasets, JSON Scout offers both low-level utilities and high-level abstractions to make JSON exploration intuitive and error-free.
 
 ## Key Features
 
@@ -28,10 +28,10 @@ JSONExplore provides a robust suite of tools designed for developers and data pr
 
 ## Installation
 
-Install JSONExplore using pip:
+Install JSON Scout using pip:
 
 ```bash
-pip install jsonexplore
+pip install json-scout
 ```
 
 ## Quick Start
@@ -39,7 +39,7 @@ pip install jsonexplore
 ### Basic Exploration
 
 ```python
-import jsonexplore as je
+import jsonscout as js
 
 # Load and explore JSON data
 data = {
@@ -48,7 +48,56 @@ data = {
         {"name": "Bob", "age": 25},
         {"name": "Charlie", "age": 35, "email": "charlie@example.com"}
     ],
-    "metadata": {"version": "1.0", "created": "2024-01-01"}
+    "metadata":     "metadata": {"version": "1.0", "created": "2024-01-01"}
+}
+
+# Use the unified Xplore interface
+explorer = js.Xplore(data)
+
+# Safe navigation with automatic error handling
+user_name = explorer['users'][0]['name'].value()  # Returns: "Alice"
+missing_field = explorer['users'][1]['email'].value()  # Returns: None (no exception)
+
+# Discover available keys
+print(explorer.keys())  # ['users', 'metadata']
+```
+
+### Structural Analysis
+
+```python
+# Analyze data structure patterns
+explore = js.Explore(data['users'])
+field_frequency = explore.field_counts()
+print(field_frequency)  # {'name': 3, 'age': 3, 'email': 2}
+
+# Safe array operations with transformations
+maybe_users = js.Maybe(data['users'])
+adult_names = maybe_users.array(
+    func=lambda i, user: user.get('name'),
+    filter=lambda i, user: user.get('age', 0) >= 30
+)
+print(adult_names)  # ['Alice', 'Charlie']
+```
+
+### File Operations
+
+```python
+# Discover and load JSON files
+json_files = js.get_json_file_paths('/path/to/data', '*.json')
+for file_path in json_files:
+    try:
+        data = js.read_json_file(file_path)
+        explorer = js.Xplore(data)
+        # Process each file safely
+    except Exception as e:
+        print(f"Error processing {file_path}: {e}")
+```
+
+### XML Integration
+
+```python
+# Convert XML to JSON-like structures
+xml_data = """
 }
 
 # Use the unified Xplore interface
@@ -67,7 +116,7 @@ print(explorer.keys())  # ['users', 'metadata']
 ```python
 # Analyze data structure patterns
 explore = je.Explore(data['users'])
-field_frequency = explore.invest_grandchildren()
+field_frequency = explore.field_counts()
 print(field_frequency)  # {'name': 3, 'age': 3, 'email': 2}
 
 # Safe array operations with transformations
@@ -106,7 +155,7 @@ xml_data = """
 </users>
 """
 
-explorer = je.Xplore(xml_data)
+explorer = js.Xplore(xml_data)
 if explorer.xml:
     json_structure = explorer.xml.to_dict()
     print(json_structure)  # {'user': {'name': 'Alice', 'age': '30'}}
@@ -136,7 +185,7 @@ if explorer.xml:
 
 ## Architecture
 
-JSONExplore is built around four core components:
+JSON Scout is built around four core components:
 
 - **`Explore`**: Lightweight structural analysis and schema discovery
 - **`Maybe`**: Monadic wrapper for safe, chainable data access
@@ -157,4 +206,4 @@ We welcome contributions! Please see our contributing guidelines for details on 
 
 ## License
 
-JSONExplore is released under the Apache License 2.0. See the LICENSE file for details.
+JSON Scout is released under the Apache License 2.0. See the LICENSE file for details.
