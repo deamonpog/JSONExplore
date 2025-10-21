@@ -1,8 +1,17 @@
-# JSONExplore
+# JSON Anatomy
 
-**A comprehensive Python library for JSON data structure exploration, analysis, and safe navigation.**
+**Dissect JSON structure and navigate data safely with intuitive exploration tools.**
 
-JSONExplore provides a robust suite of tools designed for developers and data professionals who need to introspect, analyze, and safely navigate complex JSON data structures. Whether you're working with APIs, configuration files, or large datasets, JSONExplore offers both low-level utilities and high-level abstractions to make JSON exploration intuitive and error-free.
+!!! warning "Migration Notice for json-scout Users"
+    This package was previously named **json-scout**. If you're upgrading from `json-scout`:
+    
+    1. Uninstall the old package: `pip uninstall json-scout`
+    2. Install the new package: `pip install json-anatomy`
+    3. Update imports: `import jsonscout` → `import jsonanatomy`
+    
+    See the complete [Migration Guide](https://github.com/deamonpog/json-anatomy/blob/main/MIGRATION.md) for detailed instructions.
+
+JSON Anatomy provides a robust suite of tools designed for developers and data professionals who need to introspect, analyze, and safely navigate complex JSON data structures. Whether you're working with APIs, configuration files, or large datasets, JSON Anatomy offers both low-level utilities and high-level abstractions to make JSON exploration intuitive and error-free.
 
 ## Key Features
 
@@ -28,10 +37,10 @@ JSONExplore provides a robust suite of tools designed for developers and data pr
 
 ## Installation
 
-Install JSONExplore using pip:
+Install JSON Anatomy using pip:
 
 ```bash
-pip install jsonexplore
+pip install json-anatomy
 ```
 
 ## Quick Start
@@ -39,7 +48,7 @@ pip install jsonexplore
 ### Basic Exploration
 
 ```python
-import jsonexplore as je
+import jsonanatomy as ja
 
 # Load and explore JSON data
 data = {
@@ -48,11 +57,11 @@ data = {
         {"name": "Bob", "age": 25},
         {"name": "Charlie", "age": 35, "email": "charlie@example.com"}
     ],
-    "metadata": {"version": "1.0", "created": "2024-01-01"}
+    "metadata":     "metadata": {"version": "1.0", "created": "2024-01-01"}
 }
 
 # Use the unified Xplore interface
-explorer = je.Xplore(data)
+explorer = ja.Xplore(data)
 
 # Safe navigation with automatic error handling
 user_name = explorer['users'][0]['name'].value()  # Returns: "Alice"
@@ -66,12 +75,12 @@ print(explorer.keys())  # ['users', 'metadata']
 
 ```python
 # Analyze data structure patterns
-explore = je.Explore(data['users'])
-field_frequency = explore.invest_grandchildren()
+explore = ja.Explore(data['users'])
+field_frequency = explore.field_counts()
 print(field_frequency)  # {'name': 3, 'age': 3, 'email': 2}
 
 # Safe array operations with transformations
-maybe_users = je.Maybe(data['users'])
+maybe_users = ja.Maybe(data['users'])
 adult_names = maybe_users.array(
     func=lambda i, user: user.get('name'),
     filter=lambda i, user: user.get('age', 0) >= 30
@@ -83,11 +92,11 @@ print(adult_names)  # ['Alice', 'Charlie']
 
 ```python
 # Discover and load JSON files
-json_files = je.get_json_file_paths('/path/to/data', '*.json')
+json_files = ja.get_json_file_paths('/path/to/data', '*.json')
 for file_path in json_files:
     try:
-        data = je.read_json_file(file_path)
-        explorer = je.Xplore(data)
+        data = ja.read_json_file(file_path)
+        explorer = ja.Xplore(data)
         # Process each file safely
     except Exception as e:
         print(f"Error processing {file_path}: {e}")
@@ -106,7 +115,7 @@ xml_data = """
 </users>
 """
 
-explorer = je.Xplore(xml_data)
+explorer = ja.Xplore(xml_data)
 if explorer.xml:
     json_structure = explorer.xml.to_dict()
     print(json_structure)  # {'user': {'name': 'Alice', 'age': '30'}}
@@ -136,7 +145,7 @@ if explorer.xml:
 
 ## Architecture
 
-JSONExplore is built around four core components:
+JSON Scout is built around four core components:
 
 - **`Explore`**: Lightweight structural analysis and schema discovery
 - **`Maybe`**: Monadic wrapper for safe, chainable data access
@@ -157,4 +166,5 @@ We welcome contributions! Please see our contributing guidelines for details on 
 
 ## License
 
-JSONExplore is released under the Apache License 2.0. See the LICENSE file for details.
+JSON Anatomy is released under the Apache License 2.0. See the [LICENSE](LICENSE.txt) file for details.
+Copyright © 2025 Chathura Jayalath. See the [NOTICE](NOTICE.txt) file for more details.

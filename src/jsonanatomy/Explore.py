@@ -20,7 +20,7 @@ class Explore:
 
     Attributes
     ----------
-    json_object : dict, list, or any
+    data : dict, list, or any
         The original JSON object being explored.
     child_keys : list
         A list of keys (for dicts) or indices (for lists) of direct children.
@@ -37,12 +37,12 @@ class Explore:
     [0, 1]
     """
     def __init__(self, json_object):
-        self.json_object = json_object
+        self.data = json_object
         self.child_keys = []
-        if type(self.json_object) is dict:
-            self.child_keys = list(self.json_object.keys())
-        if type(self.json_object) is list:
-            self.child_keys = [idx for idx in range(len(self.json_object))]
+        if type(self.data) is dict:
+            self.child_keys = list(self.data.keys())
+        if type(self.data) is list:
+            self.child_keys = [idx for idx in range(len(self.data))]
 
     def __repr__(self):
         """
@@ -53,9 +53,27 @@ class Explore:
         str
             A formatted string showing the type and size of the explored object.
         """
-        return f"Explore({type(self.json_object)}[size={len(self.child_keys)}])"
+        return f"Explore({type(self.data)}[size={len(self.child_keys)}])"
+    
+    def value(self):
+        """
+        Get the underlying data object.
 
-    def get_child_keys(self):
+        Returns
+        -------
+        any
+            The wrapped data object being explored.
+
+        Examples
+        --------
+        >>> data = {'name': 'Alice', 'age': 30}
+        >>> explorer = Explore(data)
+        >>> original = explorer.value()  # Returns: {'name': 'Alice', 'age': 30}
+        >>> assert original is data  # Same object reference
+        """
+        return self.data
+
+    def keys(self):
         """
         Get the keys or indices of direct children.
 
@@ -70,17 +88,17 @@ class Explore:
         --------
         >>> data = {'a': 1, 'b': 2}
         >>> explorer = Explore(data)
-        >>> print(explorer.get_child_keys())
+        >>> print(explorer.keys())
         ['a', 'b']
 
         >>> data = [10, 20, 30]
         >>> explorer = Explore(data)
-        >>> print(explorer.get_child_keys())
+        >>> print(explorer.keys())
         [0, 1, 2]
         """
         return self.child_keys
     
-    def explore_child(self, child_key):
+    def child(self, child_key):
         """
         Create a new Explore instance for a specific child.
 
@@ -98,21 +116,21 @@ class Explore:
         --------
         >>> data = {'users': [{'name': 'Alice'}]}
         >>> explorer = Explore(data)
-        >>> child = explorer.explore_child('users')
-        >>> print(type(child.json_object))
+        >>> child = explorer.child('users')
+        >>> print(type(child.data))
         <class 'list'>
         """
-        if child_key in self.json_object:
-            return Explore(self.json_object[child_key])
+        if child_key in self.child_keys:
+            return Explore(self.data[child_key])
         return Explore(None)
     
-    def invest_grandchildren(self, verbose=False):
+    def field_counts(self, verbose=False):
         """
-        Analyze the distribution of grandchild keys across all children.
+        Analyze the distribution of field names across all children in a collection.
 
         This method examines each child of the current object and counts
-        how frequently each grandchild key appears across all children.
-        Useful for understanding the schema of collections.
+        how frequently each field name appears across all children.
+        Useful for understanding the schema of collections with varying structures.
 
         Parameters
         ----------
@@ -122,7 +140,7 @@ class Explore:
         Returns
         -------
         dict
-            A dictionary mapping grandchild keys to their occurrence counts.
+            A dictionary mapping field names to their occurrence counts.
 
         Examples
         --------
@@ -134,7 +152,7 @@ class Explore:
         ...     ]
         ... }
         >>> explorer = Explore(data['users'])
-        >>> counts = explorer.invest_grandchildren()
+        >>> counts = explorer.field_counts()
         >>> print(counts)
         {'name': 3, 'age': 2, 'email': 1}
 
@@ -144,15 +162,15 @@ class Explore:
         objects may have varying schemas or optional properties.
         """
         if verbose:
-            print(f"Exploring grandchildren of type: {type(self.child_keys)} (size={len(self.json_object)}) with keys: {self.get_child_keys()}")
+            print(f"Exploring grandchildren of type: {type(self.child_keys)} (size={len(self.data)}) with keys: {self.keys()}")
         counts = {}
         for child_key in self.child_keys:
             if verbose:
                 print(f"Exploring child key: {child_key}")
-            expChild = self.explore_child(child_key)
+            expChild = self.child(child_key)
             if verbose:
-                print(f"  Child type: {type(expChild.json_object)} with keys: {expChild.get_child_keys()}")
-            for grandChildKey in expChild.get_child_keys():
+                print(f"  Child type: {type(expChild.data)} with keys: {expChild.keys()}")
+            for grandChildKey in expChild.keys():
                 if verbose:
                     print(f"    Found grandchild key: {grandChildKey}")
                 if grandChildKey in counts:

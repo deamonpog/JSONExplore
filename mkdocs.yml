@@ -1,8 +1,8 @@
-site_name: jsonexplore Documentation
-site_description: Introspect, summarize, and navigate nested JSON structures
-site_url: https://deamonpog.github.io/jsonexplore/
-repo_url: https://github.com/deamonpog/jsonexplore
-repo_name: deamonpog/jsonexplore
+site_name: JSON Anatomy Documentation
+site_description: Dissect JSON structure and navigate data safely
+site_url: https://deamonpog.github.io/json-anatomy/
+repo_url: https://github.com/deamonpog/json-anatomy
+repo_name: deamonpog/json-anatomy
 
 theme:
   name: material

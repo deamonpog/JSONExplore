@@ -121,4 +121,22 @@ class Xplore:
         >>> print(xplore.keys())
         [0, 1, 2]
         """
-        return self.explore.get_child_keys()
+        return self.explore.keys()
+    
+    def value(self):
+        """
+        Get the underlying data object.
+
+        Returns
+        -------
+        any
+            The wrapped data object being explored.
+
+        Examples
+        --------
+        >>> data = {'name': 'Alice', 'age': 30}
+        >>> xplore = Xplore(data)
+        >>> original = xplore.value()  # Returns: {'name': 'Alice', 'age': 30}
+        >>> assert original is data  # Same object reference
+        """
+        return self.data

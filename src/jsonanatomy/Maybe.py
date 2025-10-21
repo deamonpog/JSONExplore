@@ -22,7 +22,7 @@ class Maybe:
 
     Attributes
     ----------
-    json_object : any
+    data : any
         The wrapped JSON object that may or may not exist.
 
     Examples
@@ -38,7 +38,7 @@ class Maybe:
     >>> out_of_bounds = maybe.index(5).value()  # None
     """
     def __init__(self, json_object):
-        self.json_object = json_object
+        self.data = json_object
 
     def __repr__(self):
         """
@@ -49,7 +49,7 @@ class Maybe:
         str
             A formatted string showing the type of the wrapped object.
         """
-        return f"Maybe({type(self.json_object)})"
+        return f"Maybe({type(self.data)})"
     
     def __getitem__(self, key):
         """
@@ -76,11 +76,11 @@ class Maybe:
         >>> first = maybe_list[0].value()  # 10
         >>> out_of_bounds = maybe_list[5].value()  # None
         """
-        if self.json_object is not None:
-            if type(self.json_object) is dict and key in self.json_object:
-                return Maybe(self.json_object[key])
-            if type(self.json_object) is list and isinstance(key, int) and 0 <= key < len(self.json_object):
-                return Maybe(self.json_object[key])
+        if self.data is not None:
+            if type(self.data) is dict and key in self.data:
+                return Maybe(self.data[key])
+            if type(self.data) is list and isinstance(key, int) and 0 <= key < len(self.data):
+                return Maybe(self.data[key])
         return Maybe(None)
         
     def field(self, field):
@@ -103,8 +103,8 @@ class Maybe:
         >>> name = maybe.field('name').value()  # 'Alice'
         >>> age = maybe.field('age').value()    # None
         """
-        if self.json_object is not None and type(self.json_object) is dict and field in self.json_object:
-            return Maybe(self.json_object[field])
+        if self.data is not None and type(self.data) is dict and field in self.data:
+            return Maybe(self.data[field])
         return Maybe(None)
     
     def index(self, index):
@@ -127,8 +127,8 @@ class Maybe:
         >>> first = maybe.index(0).value()  # 1
         >>> fourth = maybe.index(3).value()  # None
         """
-        if self.json_object is not None and type(self.json_object) is list and index < len(self.json_object):
-            return Maybe(self.json_object[index])
+        if self.data is not None and type(self.data) is list and index < len(self.data):
+            return Maybe(self.data[index])
         return Maybe(None)
 
     def array(self, func=lambda k,o: o, filter=lambda k,o: True, as_type=list):
@@ -166,11 +166,11 @@ class Maybe:
 
         >>> not_array = Maybe(42).array()  # []
         """
-        if self.json_object is not None:
-            if type(self.json_object) is dict:
-                return as_type([func(key, obj) for key,obj in self.json_object.items() if filter(key, obj)])
-            elif type(self.json_object) is list:
-                return as_type([func(idx, obj) for idx,obj in enumerate(self.json_object) if filter(idx, obj)])
+        if self.data is not None:
+            if type(self.data) is dict:
+                return as_type([func(key, obj) for key,obj in self.data.items() if filter(key, obj)])
+            elif type(self.data) is list:
+                return as_type([func(idx, obj) for idx,obj in enumerate(self.data) if filter(idx, obj)])
         return []
     
     def filter(self, func=lambda k,o: True):
@@ -196,11 +196,11 @@ class Maybe:
         >>> maybe_list = Maybe([1, 2, 3, 4])
         >>> filtered = maybe_list.filter(lambda i,v: v % 2 == 0).value()  # [2, 4]
         """
-        if self.json_object is not None:
-            if type(self.json_object) is dict:
-                return Maybe({k: v for k,v in self.json_object.items() if func(k,v)})
-            elif type(self.json_object) is list:
-                return Maybe([obj for idx,obj in enumerate(self.json_object) if func(idx, obj)])
+        if self.data is not None:
+            if type(self.data) is dict:
+                return Maybe({k: v for k,v in self.data.items() if func(k,v)})
+            elif type(self.data) is list:
+                return Maybe([obj for idx,obj in enumerate(self.data) if func(idx, obj)])
         return Maybe(None)
 
     def value(self):
@@ -210,16 +210,17 @@ class Maybe:
         Returns
         -------
         any
-            The wrapped JSON object, which may be None if no value exists.
+            The wrapped data object, which may be None if no value exists.
 
         Examples
         --------
         >>> maybe = Maybe({'name': 'Alice'})
         >>> data = maybe.value()  # {'name': 'Alice'}
+        >>> assert data == maybe.data  # Both access methods return same object
 
         >>> empty = Maybe(None)
         >>> data = empty.value()  # None
         """
-        return self.json_object
+        return self.data
     
     
