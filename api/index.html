@@ -1187,11 +1187,21 @@
 
     <div class="doc doc-contents first">
 
-        <p>JSONExplore - A Python package for exploring and navigating JSON structures.</p>
+        <p>JSON Anatomy - A Python package for exploring and navigating JSON structures.</p>
+
+
+<details class="migration-notice" open>
+  <summary>MIGRATION NOTICE</summary>
+  <p>This package was previously named 'json-scout' with import name 'jsonscout'.
+If you're upgrading from json-scout:
+  1. Uninstall: pip uninstall json-scout
+  2. Install: pip install json-anatomy
+  3. Update imports: import jsonscout → import jsonanatomy</p>
+<p>See https://github.com/deamonpog/json-anatomy/blob/main/MIGRATION.md</p>
 <p>This package provides tools for introspecting, summarizing, and safely accessing
 nested JSON data structures. It includes utilities for file handling, safe data
 access patterns, and unified exploration interfaces.</p>
-
+</details>
 
 <p><span class="doc-section-title">Classes:</span></p>
     <table>
@@ -1268,9 +1278,9 @@ access patterns, and unified exploration interfaces.</p>
 
 
 <p><span class="doc-section-title">Examples:</span></p>
-    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">jsonexplore</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">je</span>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">jsonanatomy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">ja</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;users&#39;</span><span class="p">:</span> <span class="p">[{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Alice&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">30</span><span class="p">}]}</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">explorer</span> <span class="o">=</span> <span class="n">je</span><span class="o">.</span><span class="n">Xplore</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">explorer</span> <span class="o">=</span> <span class="n">ja</span><span class="o">.</span><span class="n">Xplore</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">name</span> <span class="o">=</span> <span class="n">explorer</span><span class="p">[</span><span class="s1">&#39;users&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>  <span class="c1"># &#39;Alice&#39;</span>
 </code></pre></div>
