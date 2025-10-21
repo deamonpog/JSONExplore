@@ -9,28 +9,28 @@ def test_imports():
     print("Testing imports...")
     
     try:
-        import jsonscout
+        import jsonanatomy
         print("✅ Main package import successful")
     except ImportError as e:
         print(f"❌ Main package import failed: {e}")
         return False
     
     try:
-        import jsonscout as js
+        import jsonanatomy as js
         print("✅ Namespace import successful")
     except ImportError as e:
         print(f"❌ Namespace import failed: {e}")
         return False
     
     try:
-        from jsonscout import Explore, Maybe, Xplore, SimpleXML
+        from jsonanatomy import Explore, Maybe, Xplore, SimpleXML
         print("✅ Individual class imports successful")
     except ImportError as e:
         print(f"❌ Individual imports failed: {e}")
         return False
     
     try:
-        from jsonscout import get_json_file_paths, read_json_file
+        from jsonanatomy import get_json_file_paths, read_json_file
         print("✅ Function imports successful")
     except ImportError as e:
         print(f"❌ Function imports failed: {e}")
@@ -42,7 +42,7 @@ def test_basic_functionality():
     """Test basic functionality of the package."""
     print("\nTesting basic functionality...")
     
-    import jsonscout as js
+    import jsonanatomy as js
     
     # Test data
     test_data = {
@@ -121,16 +121,16 @@ def test_version_info():
     print("\nTesting package information...")
     
     try:
-        import jsonscout
+        import jsonanatomy
         
         # Check if __version__ exists
-        if hasattr(jsonscout, '__version__'):
-            print(f"✅ Package version: {jsonscout.__version__}")
+        if hasattr(jsonanatomy, '__version__'):
+            print(f"✅ Package version: {jsonanatomy.__version__}")
         else:
             print("⚠️ No __version__ attribute found")
         
         # Check package contents
-        contents = dir(jsonscout)
+        contents = dir(jsonanatomy)
         expected = ['Explore', 'Maybe', 'Xplore', 'SimpleXML', 'get_json_file_paths', 'read_json_file']
         
         for item in expected:

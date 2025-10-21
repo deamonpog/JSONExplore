@@ -3,9 +3,9 @@ requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "json-scout"
+name = "json-anatomy"
 dynamic = ["version"]
-description = "Scout JSON structure and navigate data safely with intuitive exploration tools."
+description = "Dissect JSON structure and navigate data safely with intuitive exploration tools."
 readme = "README.md"
 requires-python = ">=3.7"
 license = { text = "Apache-2.0" }
@@ -44,11 +44,11 @@ classifiers = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/deamonpog/json-scout"
-Documentation = "https://deamonpog.github.io/json-scout/"
-Repository = "https://github.com/deamonpog/json-scout"
-"Bug Tracker" = "https://github.com/deamonpog/json-scout/issues"
-Changelog = "https://github.com/deamonpog/json-scout/releases"
+Homepage = "https://github.com/deamonpog/json-anatomy"
+Documentation = "https://deamonpog.github.io/json-anatomy/"
+Repository = "https://github.com/deamonpog/json-anatomy"
+"Bug Tracker" = "https://github.com/deamonpog/json-anatomy/issues"
+Changelog = "https://github.com/deamonpog/json-anatomy/releases"
 
 [project.optional-dependencies]
 dev = [
@@ -70,10 +70,10 @@ package-dir = {"" = "src"}
 license-files = ["LICENSE", "NOTICE"]
 
 [tool.setuptools.dynamic]
-version = {attr = "jsonscout._version.__version__"}
+version = {attr = "jsonanatomy._version.__version__"}
 
 [tool.setuptools.packages.find]
 where = ["src"]
 
 [tool.setuptools.package-data]
-jsonscout = ["py.typed"]
+jsonanatomy = ["py.typed"]
