@@ -1,8 +1,17 @@
-# JSON Scout
+# JSON Anatomy
 
-**Scout JSON structure and navigate data safely with intuitive exploration tools.**
+**Dissect JSON structure and navigate data safely with intuitive exploration tools.**
 
-JSON Scout provides a robust suite of tools designed for developers and data professionals who need to introspect, analyze, and safely navigate complex JSON data structures. Whether you're working with APIs, configuration files, or large datasets, JSON Scout offers both low-level utilities and high-level abstractions to make JSON exploration intuitive and error-free.
+!!! warning "Migration Notice for json-scout Users"
+    This package was previously named **json-scout**. If you're upgrading from `json-scout`:
+    
+    1. Uninstall the old package: `pip uninstall json-scout`
+    2. Install the new package: `pip install json-anatomy`
+    3. Update imports: `import jsonscout` → `import jsonanatomy`
+    
+    See the complete [Migration Guide](https://github.com/deamonpog/json-anatomy/blob/main/MIGRATION.md) for detailed instructions.
+
+JSON Anatomy provides a robust suite of tools designed for developers and data professionals who need to introspect, analyze, and safely navigate complex JSON data structures. Whether you're working with APIs, configuration files, or large datasets, JSON Anatomy offers both low-level utilities and high-level abstractions to make JSON exploration intuitive and error-free.
 
 ## Key Features
 
@@ -28,10 +37,10 @@ JSON Scout provides a robust suite of tools designed for developers and data pro
 
 ## Installation
 
-Install JSON Scout using pip:
+Install JSON Anatomy using pip:
 
 ```bash
-pip install json-scout
+pip install json-anatomy
 ```
 
 ## Quick Start
@@ -39,7 +48,7 @@ pip install json-scout
 ### Basic Exploration
 
 ```python
-import jsonscout as js
+import jsonanatomy as ja
 
 # Load and explore JSON data
 data = {
@@ -52,7 +61,7 @@ data = {
 }
 
 # Use the unified Xplore interface
-explorer = js.Xplore(data)
+explorer = ja.Xplore(data)
 
 # Safe navigation with automatic error handling
 user_name = explorer['users'][0]['name'].value()  # Returns: "Alice"
@@ -66,12 +75,12 @@ print(explorer.keys())  # ['users', 'metadata']
 
 ```python
 # Analyze data structure patterns
-explore = js.Explore(data['users'])
+explore = ja.Explore(data['users'])
 field_frequency = explore.field_counts()
 print(field_frequency)  # {'name': 3, 'age': 3, 'email': 2}
 
 # Safe array operations with transformations
-maybe_users = js.Maybe(data['users'])
+maybe_users = ja.Maybe(data['users'])
 adult_names = maybe_users.array(
     func=lambda i, user: user.get('name'),
     filter=lambda i, user: user.get('age', 0) >= 30
@@ -83,60 +92,11 @@ print(adult_names)  # ['Alice', 'Charlie']
 
 ```python
 # Discover and load JSON files
-json_files = js.get_json_file_paths('/path/to/data', '*.json')
+json_files = ja.get_json_file_paths('/path/to/data', '*.json')
 for file_path in json_files:
     try:
-        data = js.read_json_file(file_path)
-        explorer = js.Xplore(data)
-        # Process each file safely
-    except Exception as e:
-        print(f"Error processing {file_path}: {e}")
-```
-
-### XML Integration
-
-```python
-# Convert XML to JSON-like structures
-xml_data = """
-}
-
-# Use the unified Xplore interface
-explorer = je.Xplore(data)
-
-# Safe navigation with automatic error handling
-user_name = explorer['users'][0]['name'].value()  # Returns: "Alice"
-missing_field = explorer['users'][1]['email'].value()  # Returns: None (no exception)
-
-# Discover available keys
-print(explorer.keys())  # ['users', 'metadata']
-```
-
-### Structural Analysis
-
-```python
-# Analyze data structure patterns
-explore = je.Explore(data['users'])
-field_frequency = explore.field_counts()
-print(field_frequency)  # {'name': 3, 'age': 3, 'email': 2}
-
-# Safe array operations with transformations
-maybe_users = je.Maybe(data['users'])
-adult_names = maybe_users.array(
-    func=lambda i, user: user.get('name'),
-    filter=lambda i, user: user.get('age', 0) >= 30
-)
-print(adult_names)  # ['Alice', 'Charlie']
-```
-
-### File Operations
-
-```python
-# Discover and load JSON files
-json_files = je.get_json_file_paths('/path/to/data', '*.json')
-for file_path in json_files:
-    try:
-        data = je.read_json_file(file_path)
-        explorer = je.Xplore(data)
+        data = ja.read_json_file(file_path)
+        explorer = ja.Xplore(data)
         # Process each file safely
     except Exception as e:
         print(f"Error processing {file_path}: {e}")
@@ -155,7 +115,7 @@ xml_data = """
 </users>
 """
 
-explorer = js.Xplore(xml_data)
+explorer = ja.Xplore(xml_data)
 if explorer.xml:
     json_structure = explorer.xml.to_dict()
     print(json_structure)  # {'user': {'name': 'Alice', 'age': '30'}}
@@ -206,5 +166,5 @@ We welcome contributions! Please see our contributing guidelines for details on 
 
 ## License
 
-JSON Scout is released under the Apache License 2.0. See the [LICENSE](LICENSE.txt) file for details.
+JSON Anatomy is released under the Apache License 2.0. See the [LICENSE](LICENSE.txt) file for details.
 Copyright © 2025 Chathura Jayalath. See the [NOTICE](NOTICE.txt) file for more details.

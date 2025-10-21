@@ -1,5 +1,15 @@
 """
-JSONExplore - A Python package for exploring and navigating JSON structures.
+JSON Anatomy - A Python package for exploring and navigating JSON structures.
+
+MIGRATION NOTICE
+----------------
+This package was previously named 'json-scout' with import name 'jsonscout'.
+If you're upgrading from json-scout:
+  1. Uninstall: pip uninstall json-scout
+  2. Install: pip install json-anatomy
+  3. Update imports: import jsonscout → import jsonanatomy
+
+See https://github.com/deamonpog/json-anatomy/blob/main/MIGRATION.md
 
 This package provides tools for introspecting, summarizing, and safely accessing
 nested JSON data structures. It includes utilities for file handling, safe data
@@ -25,9 +35,9 @@ read_json_file : function
 
 Examples
 --------
->>> import jsonexplore as je
+>>> import jsonanatomy as ja
 >>> data = {'users': [{'name': 'Alice', 'age': 30}]}
->>> explorer = je.Xplore(data)
+>>> explorer = ja.Xplore(data)
 >>> name = explorer['users'][0]['name'].value()
 >>> print(name)  # 'Alice'
 """

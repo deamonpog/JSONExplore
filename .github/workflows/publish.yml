@@ -35,8 +35,8 @@ jobs:
         
     - name: Test import
       run: |
-        python -c "import jsonscout; print('Import successful')"
-        python -c "import jsonscout as js; print('Namespace import successful')"
+        python -c "import jsonanatomy; print('Import successful')"
+        python -c "import jsonanatomy as ja; print('Namespace import successful')"
 
   build:
     needs: test
